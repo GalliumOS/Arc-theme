@@ -11,7 +11,7 @@ title_shadow_inactive=true
 
 active_text_color=#ffffff
 #active_text_shadow_color=#e7e8eb
-inactive_text_color=#ffffff
+inactive_text_color=#e1e1e1
 #inactive_text_shadow_color=#e7e8eb
 
 #placement_ratio=20
