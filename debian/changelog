@@ -1,0 +1,17 @@
+arc-theme (1.0.1-1ubuntu1) stable; urgency=low
+
+  * Removed custom xfwm4 theme
+
+ -- Hugh Greenberg <hugh@galliumos.org>  Mon, 12 Oct 2015 11:32:38 +0100
+
+arc-theme (1.0-1ubuntu1) stable; urgency=low
+
+  * Mods for GalliumOS
+
+ -- Hugh Greenberg <hugh@galliumos.org>  Mon, 12 Oct 2015 11:32:38 +0100
+
+arc-theme (1.0-0ubuntu1) stable; urgency=low
+
+  * Initial Package Release
+
+ -- Horst3180 <horst3180@gmx.net>  Fri, 5 Jun 2015 11:32:38 +0100

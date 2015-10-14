@@ -1,0 +1,12 @@
+Source: arc-theme
+Section: misc
+Priority: optional
+Maintainer: Horst3180 <horst3180@gmx.net>
+Build-Depends: debhelper (>= 4.1.16), autoconf, automake, libgtk-3-dev
+Standards-Version: 3.9.6.0
+
+Package: arc-theme
+Architecture: all
+Depends: gnome-themes-standard, gtk2-engines-murrine, ${shlibs:Depends}, ${misc:Depends}
+Description: Arc is a theme for GTK 3, GTK 2 and Gnome-Shell.
+ It supports GTK 3 and GTK 2 based desktop environments like Gnome, Unity, Budgie, Pantheon, etc.
