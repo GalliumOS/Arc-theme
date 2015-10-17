@@ -1,3 +1,9 @@
+arc-theme-galliumos (1.0.3-0ubuntu1) stable; urgency=low
+
+  * A fix for the xfce4-mixer icon
+
+ -- Hugh Greenberg <hugh@galliumos.org>  Fri, 16 Oct 2015 11:32:38 +0100
+
 arc-theme-galliumos (1.0.2-0ubuntu1) stable; urgency=low
 
   * xfwm4 themes so resizing on the corners and sides works
