@@ -1,17 +1,18 @@
-arc-theme (1.0.1-1ubuntu1) stable; urgency=low
+arc-theme-galliumos (1.0.2-0ubuntu1) stable; urgency=low
 
-  * Removed custom xfwm4 theme
+  * xfwm4 themes so resizing on the corners and sides works
 
- -- Hugh Greenberg <hugh@galliumos.org>  Mon, 12 Oct 2015 11:32:38 +0100
+ -- Hugh Greenberg <hugh@galliumos.org>  Fri, 16 Oct 2015 11:32:38 +0100
 
-arc-theme (1.0-1ubuntu1) stable; urgency=low
+arc-theme-galliumos (1.0.1-0ubuntu1) stable; urgency=low
 
-  * Mods for GalliumOS
+  * Modified panel icon size
+  * Change directories
 
- -- Hugh Greenberg <hugh@galliumos.org>  Mon, 12 Oct 2015 11:32:38 +0100
+ -- Hugh Greenberg <hugh@galliumos.org>  Wed, 15 Oct 2015 11:32:38 +0100
 
-arc-theme (1.0-0ubuntu1) stable; urgency=low
+arc-theme-galliumos (1.0-0ubuntu1) stable; urgency=low
 
   * Initial Package Release
 
- -- Horst3180 <horst3180@gmx.net>  Fri, 5 Jun 2015 11:32:38 +0100
+ -- Hugh Greenberg <hugh@galliumos.org>  Wed, 15 Oct 2015 11:32:38 +0100
