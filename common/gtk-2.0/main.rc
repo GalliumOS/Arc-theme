@@ -913,6 +913,13 @@ style "button" {
   engine "pixmap" {
 
     image {
+      function = FOCUS
+      file = "assets/focus-line-button.png"
+      border = { 1, 1, 1, 1 }
+      stretch = TRUE
+    }
+
+    image {
       function = BOX
       state = NORMAL
       file = "assets/button.png"
