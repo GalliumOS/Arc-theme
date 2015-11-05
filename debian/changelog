@@ -1,3 +1,15 @@
+arc-theme-galliumos (1.0.5-0ubuntu1) stable; urgency=low
+
+  * Add more visible highlighting to focused state of buttons (reynhout)
+
+ -- Hugh Greenberg <hugh@galliumos.org>  Wed, 28 Oct 2015 11:32:38 +0100
+
+arc-theme-galliumos (1.0.4-0ubuntu1) stable; urgency=low
+
+  * Changed button-hover.png so you can see it better on some Chromebook screens
+
+ -- Hugh Greenberg <hugh@galliumos.org>  Mon, 26 Oct 2015 11:32:38 +0100
+
 arc-theme-galliumos (1.0.3-0ubuntu1) stable; urgency=low
 
   * A fix for the xfce4-mixer icon
