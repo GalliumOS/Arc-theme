@@ -1,3 +1,10 @@
+arc-theme-galliumos (0git20151003.be882ef2-galliumos5) stable; urgency=low
+
+  * Set package version to match provenance
+  * upstream: https://github.com/horst3180/Arc-theme
+
+ -- reynhout <reynhout@galliumos.org>  Sun, 10 Jan 2016 21:05:33 +0000
+
 arc-theme-galliumos (1.0.5-0ubuntu1) stable; urgency=low
 
   * Add more visible highlighting to focused state of buttons (reynhout)
