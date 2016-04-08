@@ -1,7 +1,8 @@
-arc-theme-galliumos (0git20160407.46a232e-galliumos1) stable; urgency=low
+arc-theme-galliumos (0git20160407.46a232e-galliumos2) stable; urgency=low
 
   * Synced upstream
   * Removed dotted line in scroll views
+  * Changed xthickness and ythickness for buttons to be the default
   * upstream: https://github.com/horst3180/Arc-theme
 
  -- Hugh Greenberg <hugh@galliumos.org>  Thu, 07 Apr 2016 21:05:33 +0000
