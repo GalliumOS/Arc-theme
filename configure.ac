@@ -1,6 +1,6 @@
 AC_INIT(
     [arc-theme],
-    [20151002],
+    [20160331],
     [https://github.com/horst3180/Arc-theme/issues],
     [arc-theme],
     [https://github.com/horst3180/Arc-theme],
@@ -9,7 +9,7 @@ AC_INIT(
 
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([m4])
-AM_INIT_AUTOMAKE([foreign])
+AM_INIT_AUTOMAKE([no-dist-gzip dist-xz foreign])
 AC_PROG_MKDIR_P
 
 ARC_ENABLE([LIGHT],         [light],         [Arc Light],     [disable])

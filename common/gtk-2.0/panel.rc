@@ -44,7 +44,7 @@ style "panelbar" {
 
 style "panelbuttons" {
 
-  xthickness = 2
+  xthickness = 4
   ythickness = 0
 
   engine "murrine" {

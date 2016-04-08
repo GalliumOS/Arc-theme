@@ -1,25 +1,25 @@
 # Arc Theme
 
-Arc is a flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell. It supports GTK 3 and GTK 2 based desktop environments like Gnome, Unity, Budgie, Pantheon, XFCE, Mate, etc.
+Arc is a flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell which supports GTK 3 and GTK 2 based desktop environments like Gnome, Unity, Budgie, Pantheon, XFCE, Mate, etc.
 
 ###Arc is available in three variants 
 
 #####Arc
 
-![alt tag](http://i.imgur.com/Ph5ObOa.png)
+![A screenshot of the Arc theme](http://i.imgur.com/Ph5ObOa.png)
 
 #####Arc-Darker
 
-![alt tag](http://i.imgur.com/NC6dqyl.png)
+![A screenshot of the Arc-Darker theme](http://i.imgur.com/NC6dqyl.png)
 
 #####Arc-Dark
 
-![alt tag](http://i.imgur.com/5AGlCnA.png)
+![A screenshot of the Arc-Dark theme](http://i.imgur.com/5AGlCnA.png)
 
 
 ### Requirements
 
-* Gnome/GTK 3.14, 3.16 or 3.18
+* Gnome/GTK 3.14, 3.16, 3.18 or 3.20
 * The `gnome-themes-standard` package
 * The murrine engine. This has different names depending on your distro.
   * `gtk-engine-murrine` (Arch Linux)
@@ -31,16 +31,16 @@ Arc is a flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell. 
 Main distributions that meet these requirements are
 
 * Arch Linux and Arch Linux based distros
-* Ubuntu 15.04 and 15.10 (**Ubuntu 14.04 and 14.10 are not supported**)
+* Ubuntu 15.04, 15.10 and 16.04 (**Ubuntu 14.04 and 14.10 are not supported**)
 * elementary OS Freya
-* Debian Jessie, Testing or Unstable
+* Debian 8, Testing or Unstable
 * Gentoo
-* Fedora 21, 22 and 23
-* OpenSuse 13.2 and Tumbleweed
+* Fedora 21 - 24
+* openSUSE 13.2, Leap 42.1 and Tumbleweed
 
-Derivatives of these distributions should work, aswell.
+Derivatives of these distributions should work, as well.
 
-If your distribution is not listed, please check the requirements yourself.
+If your distribution isn't listed, please check the requirements yourself.
 
 ### Installation
 
@@ -64,13 +64,15 @@ http://software.opensuse.org/download.html?project=home%3AHorst3180&package=arc-
 
 Arch Linux users can install the theme from the AUR
 
-https://aur.archlinux.org/packages/gtk-theme-arc-git/  
+**Official Releases**: https://aur.archlinux.org/packages/gtk-theme-arc/  
 
-**Note:** If you're having trouble with the AUR package please email the package maintainer at zach@zach-adams.com before creating an issue.
+**Development Releases**: https://aur.archlinux.org/packages/gtk-theme-arc-git/  
+
+**Note:** If you're having trouble with the AUR packages please email the package maintainer at zach@zach-adams.com before creating an issue.
 
 #### Manual Installation
 
-To build the theme you need 
+To build the theme you'll need 
 * `autoconf`
 * `automake`
 * `pkg-config` or `pkgconfig` if you use Fedora
@@ -107,7 +109,7 @@ Other options to pass to autogen.sh are
     --disable-xfwm             disable XFWM support
     --disable-xfce-notify      disable XFCE Notify support
 
-    --with-gnome=<version>     build the theme for a specific Gnome version (3.14, 3.16, 3.18)
+    --with-gnome=<version>     build the theme for a specific Gnome version (3.14, 3.16, 3.18, 3.20)
                                Note: Normally the correct version is detected automatically and this
                                option should not be needed.
 
@@ -137,7 +139,7 @@ Now open the Plank preferences window by executing `plank --preferences` from a 
 
 ### Troubleshooting
 
-If you have Ubuntu with a newer GTK/Gnome version than the one included by default (i.e Ubuntu 14.04 with GTK 3.14 or Ubuntu 15.04 with GTK 3.16, etc.) the prebuilt packages don't work properly and you have to install the theme manually as described above.
+If you have Ubuntu with a newer GTK/Gnome version than the one included by default (i.e Ubuntu 14.04 with GTK 3.14 or Ubuntu 15.04 with GTK 3.16, etc.) the prebuilt packages won't work properly and you have to install the theme manually as described above.
 This is also true for other distros with a different GTK/Gnome version than the one included by default
 
 --
@@ -151,4 +153,5 @@ If you get artifacts like black or invisible backgrounds under Unity, disable ov
 If you find a bug, please report it at https://github.com/horst3180/arc-theme/issues
 
 ### Full Preview
-![alt tag](http://i.imgur.com/tD1OBQ3.png)
+![A full screenshot of the Arc theme](http://i.imgur.com/tD1OBQ3.png)
+<sub>Screenshot Details: Icons: unreleased | Launcher Icons based on [White Pixel Icons](http://darkdawg.deviantart.com/art/White-Pixel-Icons-252310560) | [Wallpaper](https://pixabay.com/photo-869593/) | Font: Futura Bk bt</sub>

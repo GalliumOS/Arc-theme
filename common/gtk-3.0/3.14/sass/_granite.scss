@@ -192,6 +192,11 @@ GraniteWidgetsPopOver * {
 }
 
 //
+// Xs Entry
+//
+GraniteWidgetsXsEntry.entry { padding: 4px; }
+
+//
 // Text Styles
 //
 .h1 { font: open sans 24px; }
@@ -201,7 +206,6 @@ GraniteWidgetsPopOver * {
 .category-label {
     color: mix($bg_color, $text_color, 30%);
     font-weight: 600;
-    text-shadow: 0 1px transparentize(white, 0.4);
 }
 
 .h4 {
