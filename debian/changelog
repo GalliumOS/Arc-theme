@@ -1,3 +1,10 @@
+arc-theme-galliumos (0git20160407.46a232e-galliumos3) stable; urgency=low
+
+  * Changed the xthickness and ythickness back to 0 for buttons
+  * Changed the xthickness to 2 for panel buttons
+
+ -- Hugh Greenberg <hugh@galliumos.org>  Tue, 19 Apr 2016 21:05:33 +0000
+
 arc-theme-galliumos (0git20160407.46a232e-galliumos2) stable; urgency=low
 
   * Synced upstream

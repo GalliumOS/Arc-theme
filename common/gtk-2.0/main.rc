@@ -906,8 +906,8 @@ style "menu_item"
 
 style "button" {
 
-  xthickness = 4
-  ythickness = 4
+  xthickness = 0
+  ythickness = 0
 
   engine "pixmap" {
     image {
