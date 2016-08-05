@@ -1,3 +1,9 @@
+arc-theme-galliumos (0git20160407.46a232e-galliumos4) stable; urgency=medium
+
+  * Fixed shadows to avoid rendering with gtk-murrine
+
+ -- David Muckle <dvdmuckle@galliumos>  Thu, 04 Aug 2016 22:32:50 -0400
+
 arc-theme-galliumos (0git20160407.46a232e-galliumos3) stable; urgency=low
 
   * Changed the xthickness and ythickness back to 0 for buttons
