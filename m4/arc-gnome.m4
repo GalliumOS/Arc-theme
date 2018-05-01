@@ -2,19 +2,19 @@
 # ---------------
 AC_DEFUN([ARC_GNOME], [
     GNOMEDIR="$srcdir/common/gtk-3.0"
-
-    PKG_CHECK_EXISTS(
-        [gtk+-3.0],
-        [GNOME_VERSION=`$PKG_CONFIG --modversion gtk+-3.0`],
-        [GNOME_VERSION=`ls -1 "$GNOMEDIR" | tail -1`]
-    )
+    PKG_PROG_PKG_CONFIG()
     AC_ARG_WITH(
         [gnome],
         [AS_HELP_STRING(
             [--with-gnome],
             [GNOME minor version]
         )],
-        [GNOME_VERSION="$withval"]
+        [GNOME_VERSION="$withval"],
+        [PKG_CHECK_EXISTS(
+             [gtk+-3.0],
+             [GNOME_VERSION=`$PKG_CONFIG --modversion gtk+-3.0`],
+             [AC_MSG_ERROR([Could not determine GNOME version. Install GTK3 and its development files (libgtk-3-dev for Debian/Ubuntu based distros and gtk3-devel for RPM based distros).])]
+         )]
     )
 
     # Trim version extras
@@ -31,7 +31,8 @@ AC_DEFUN([ARC_GNOME], [
     )
     AS_IF(
         [! test -e "$GNOMEDIR/$GNOME_VERSION"],
-        [AC_MSG_ERROR([invalid GNOME version: $GNOME_VERSION])]
+        [AC_MSG_ERROR([Invalid GNOME version: $GNOME_VERSION])]
     )
     AC_SUBST([GNOME_VERSION])
+    AC_MSG_RESULT([Building for GNOME $GNOME_VERSION])
 ])

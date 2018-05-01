@@ -1,18 +1,5 @@
 // Drawing mixins
 
-// generic drawing of more complex things
-
-@mixin _shadows($shadow1, $shadow2:none, $shadow3:none, $shadow4:none) {
-//
-// Helper function to stack up to 4 box-shadows;
-//
-
-  @if $shadow4!=none { box-shadow: $shadow1, $shadow2, $shadow3, $shadow4; }
-  @else if $shadow3!=none { box-shadow: $shadow1, $shadow2, $shadow3; }
-  @else if $shadow2!=none { box-shadow: $shadow1, $shadow2; }
-  @else { box-shadow: $shadow1; }
-}
-
 // Entries
 
 @mixin entry($t) {
@@ -121,12 +108,12 @@
 
 // Buttons
 
-@mixin button($t, $actionb_color:red) {
+@mixin button($t, $actionb_bg:red, $actionb_fg: green) {
 //
 // Button drawing function
 //
 // $t:    button type,
-// $actionb_color: used for destructive and suggested action buttons
+// $actionb_bg, $actionb_fg: used for destructive and suggested action buttons
 
   @if $t==normal {
   //
@@ -279,10 +266,10 @@
   //
     background-clip: border-box;
 
-    color: $selected_fg_color;
-    outline-color: transparentize($selected_fg_color, 0.7);
-    background-color: $actionb_color;
-    border-color: $actionb_color;
+    color: $actionb_fg;
+    outline-color: transparentize($actionb_fg, 0.7);
+    background-color: $actionb_bg;
+    border-color: $actionb_bg;
   }
 
   @else if $t==undecorated {

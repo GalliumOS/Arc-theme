@@ -47,21 +47,24 @@ NautilusWindow {
       }
     }
 
+    .sidebar-button.button {
+      color: $dark_sidebar_fg;
+
+      &:hover { @include button(osd-hover); }
+      &:active {
+        background-clip: padding-box;
+        @include button(osd-active);
+      }
+
+      &:not(:hover):not(:active) > GtkImage { opacity: 0.5 };
+    }
+
     .separator { color: transparent; }
 
     .scrollbar { @extend %dark_sidebar_scrollbar }
   }
 
   &.maximized GtkPlacesSidebar.sidebar { background-color: opacify($dark_sidebar_bg, 1); }
-
-  .sidebar-button.button {
-    color: $dark_sidebar_fg;
-
-    &:hover { @include button(osd-hover); }
-    &:active { @include button(osd-active); }
-
-    &:not(:hover):not(:active) > GtkImage { opacity: 0.5 };
-  }
 }
 
 
@@ -96,8 +99,14 @@ MarlinViewWindow {
   }
   &.maximized .sidebar { background-color: opacify($dark_sidebar_bg, 1); }
 
-  .pane-separator { background-color: $dark_sidebar_border; }
 }
+
+NemoWindow.background > GtkGrid > GtkPaned > .pane-separator,
+MarlinViewWindow.background > GtkBox > GtkPaned > .pane-separator { background-color: $dark_sidebar_border }
+
+// Fix Nautilus transparency issues
+NautilusWindow NautilusWindowSlot { background-color: $base_color; }
+NautilusDesktopWindow NautilusWindowSlot { background-color: transparent; }
 
 GtkFileChooserDialog {
 
@@ -142,8 +151,6 @@ GeditWindow.background.csd {
   > .titlebar .pane-separator:backdrop,
   &.maximized > .titlebar .pane-separator:backdrop { background-color: $header_border; }
 
-  > .titlebar { background-color: transparent; }
-
   > .titlebar > GtkHeaderBar.header-bar.titlebar {
     background-color: $header_bg;
 
@@ -157,11 +164,17 @@ GeditWindow.background.csd {
   }
 }
 
-// Gedit
-GeditWindow.background.csd {
+FeedReaderreaderUI.background.csd > FeedReaderreaderHeaderbar.titlebar,
+GeditWindow.background.csd > .titlebar {
   background-color: transparent;
+}
 
-  .pane-separator { background-color: $dark_sidebar_border; }
+// Gedit
+GeditWindow.background {
+  &.csd { background-color: transparent; }
+
+  .gedit-side-panel-paned .pane-separator { background-color: $dark_sidebar_border; }
+  .gedit-bottom-panel-paned .pane-separator { background-color: $borders_color; }
 }
 
 .gedit-bottom-panel-paned { background-color: $base_color; }

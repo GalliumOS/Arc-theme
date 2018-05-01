@@ -1,0 +1,102 @@
+arc-theme (20180114-1ubuntu1) bionic; urgency=medium
+
+  * Bug-fix release
+    cherrypick the following fixes
+    - Budgie workspace and padding issues
+      0001-Budgie-improvements-61.patch
+    - chromium CSD styling
+      0001-Add-a-workaround-for-Chrome-ium-CSD-mode-titlebutton.patch
+    - Budgie panel button color
+      0001-Ensure-Panel-buttons-use-the-selected-foreground-col.patch
+    - Fix bouncing icons in cinnamon
+      0001-Fix-bouncing-launcher-icons-in-cinnamon-51.patch
+    - GNOME Shell top-bar color
+      0001-fix-color-top-bar-gnome-in-gnome-shell.patch
+ -- David Mohammed <fossfreedom@ubuntu.com>  Sun, 01 Apr 2018 13:41:56 +0100
+
+arc-theme (20180114-1) unstable; urgency=medium
+
+  * New upstream release
+  * Packaging changes:
+    - Previous upload was to experimental since Debian was in package
+      freeze for Stretch.  This release is to unstable since the archive
+      is now unfrozen
+    - Update upstream details in debian/upstream/metadata
+    - debian/copyright Revise copyright details for 2018 year change and
+      upstream details
+    - debian/copyright change debian packaging from GPL-3+ to GPL-2+
+    - debian/copyright remove obsolete gnome-shell files
+    - debian/watch updated for upstream repository
+    - debian/control add build dependency sassc
+    - debian/control change Priority from extra to optional
+    - debian/control bumped Standards-Version; no changes required
+
+ -- David Mohammed <fossfreedom@ubuntu.com>  Sun, 14 Jan 2018 13:20:54 +0000
+
+arc-theme (20170302-2) experimental; urgency=medium
+
+  * Bug-fix release
+    - add missing GTK+2 dependency - gtk2-engines-pixbuf (Closes: #864438)
+
+ -- David Mohammed <fossfreedom@ubuntu.com>  Thu, 08 Jun 2017 16:53:23 +0100
+
+arc-theme (20170302-1) experimental; urgency=medium
+
+  * New upstream release
+    - Cinnamon 3.2 fixes
+    - Small bugfixes
+  * Packaging Changes
+    - update copyright year from 2016 to 2016-2017
+    - update watch to include upstream signed signature
+
+ -- David Mohammed <fossfreedom@ubuntu.com>  Thu, 02 Mar 2017 20:37:05 +0000
+
+arc-theme (20161119-1) unstable; urgency=medium
+
+  * New upstream release
+    - Cinnamon 3.2
+    - Bugfixes
+  * Packaging Changes
+    - updated David Mohammed email address in debian/copyright
+    - debian/control changed vcs location to updated UbuntuBudgie repo
+    - debian/control use debhelper v10
+
+ -- David Mohammed <fossfreedom@ubuntu.com>  Wed, 23 Nov 2016 19:03:43 +0000
+
+arc-theme (20161005-1) unstable; urgency=medium
+
+  * New upstream release
+    - Fix OSD windows in MATE 1.16
+    - Fix Unity window decorations with GTK+ 3.20
+    - Minor bugfixes
+  * Packaging Changes
+    - update debian/upstream/metadata to remove non-recommended
+      homepage field (Closes: #838988)
+    - update homepage url in debian/control
+
+ -- David Mohammed <fossfreedom@ubuntu.com>  Wed, 05 Oct 2016 18:38:01 +0100
+
+arc-theme (20160923-1) unstable; urgency=medium
+
+  * New upstream release
+    - GNOME 3.22 support
+    - updates for all supported desktop environments
+    - fix GNOME 3.22 build issue (Closes: #837265)
+  * Packaging Changes
+    - update maintainer email address
+    - update files in debian/copyright
+    - correct DE capitalization issues in debian/control
+
+ -- David Mohammed <fossfreedom@ubuntu.com>  Sat, 24 Sep 2016 09:09:01 +0100
+
+arc-theme (20160605-2) unstable; urgency=medium
+
+  * Include Arc's plank GTK+ option for each theme variant
+
+ -- David Mohammed <foss.freedom@gmail.com>  Wed, 06 Jul 2016 20:15:15 +0100
+
+arc-theme (20160605-1) unstable; urgency=medium
+
+  * Initial Release (Closes: #826762)
+
+ -- David Mohammed <foss.freedom@gmail.com>  Wed, 08 Jun 2016 19:16:45 +0100
