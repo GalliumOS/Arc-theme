@@ -1,0 +1,63 @@
+Description: Add a workaround for Chrome(ium) CSD-mode titlebuttons (#62)
+ See details in nav_button_provider_gtk3.cc of Chromium source.
+ Those titlebutton sizes should be equal to Gtk.IconSize.MENU if
+ Gtk+ themes provided the customed titlebutton icon images.
+ 
+ * Set min-width/height as 16px without any padding.
+ * Move CSD-titlebutton horizontal spacing from padding to outer margins.
+ 
+ This should fix the issue: #62
+Bug: https://github.com/nicohood/arc-theme/issues/62
+Author: Tista <tista.gma500@gmail.com>
+Last-Update: 2018-03-29
+Applied-Upstream: commit:81c785aea91cf669218fca23611dcd98e4081b77
+---
+ common/gtk-3.0/3.18/sass/_applications.scss | 12 ++++++++++++
+ common/gtk-3.0/3.20/sass/_applications.scss | 14 ++++++++++++++
+ 2 files changed, 26 insertions(+)
+
+diff --git a/common/gtk-3.0/3.18/sass/_applications.scss b/common/gtk-3.0/3.18/sass/_applications.scss
+index ed61afe..02e8f10 100644
+--- a/common/gtk-3.0/3.18/sass/_applications.scss
++++ b/common/gtk-3.0/3.18/sass/_applications.scss
+@@ -805,3 +805,15 @@ SwitchboardCategoryView .view:selected,
+ SwitchboardCategoryView .view:selected:focus {
+   color: $fg_color;
+ }
++
++//
++// Chromium
++//
++GtkWindow.background.chromium {
++  // See details in nav_button_provider_gtk3.cc
++  .header-bar.titlebar .button.titlebutton {
++    // move button spacing from padding to margin
++    margin: 0px ((24px - 16px) / 2);
++    padding: 0px;
++  }
++}
+diff --git a/common/gtk-3.0/3.20/sass/_applications.scss b/common/gtk-3.0/3.20/sass/_applications.scss
+index 4241f6e..149d0c0 100644
+--- a/common/gtk-3.0/3.20/sass/_applications.scss
++++ b/common/gtk-3.0/3.20/sass/_applications.scss
+@@ -903,3 +903,17 @@ panel-toplevel.background {
+ //SwitchboardCategoryView .view:selected:focus {
+ //  color: $fg_color;
+ //}
++
++//
++// Chromium
++//
++window.background.chromium {
++  // See details in nav_button_provider_gtk3.cc
++  headerbar.titlebar button.titlebutton {
++    min-width: 16px;
++    min-height: 16px;
++    // move button spacing from padding to margin
++    margin: 0px ((24px - 16px) / 2);
++    padding: 0px;
++  }
++}
+-- 
+2.14.1
+

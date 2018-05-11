@@ -1,0 +1,94 @@
+Description: Ensure Panel buttons use the selected foreground color #64 
+ Use the var value instead of white for consistency
+Bug: https://github.com/NicoHood/arc-theme/pull/64
+Applied-Upstream: commit:aee669ebd0a079c38b010c71d7b0a4667a1364c5
+Author: David Mohammed <fossfreedom@ubuntu.com>
+Last-Update: 2018-04-01
+---
+ common/gtk-3.0/3.20/sass/_budgie.scss | 26 +++++++++++++++++---------
+ 1 file changed, 17 insertions(+), 9 deletions(-)
+
+diff --git a/common/gtk-3.0/3.20/sass/_budgie.scss b/common/gtk-3.0/3.20/sass/_budgie.scss
+index 7ff68b0..8408c35 100644
+--- a/common/gtk-3.0/3.20/sass/_budgie.scss
++++ b/common/gtk-3.0/3.20/sass/_budgie.scss
+@@ -17,21 +17,21 @@ $z-depth-4: rgba(0, 0, 0, 0.34);
+   // solid-mode
+   // always use dark-color of dark variant
+   background-color: $panel_bg;
+-  color: white;
++  color: $selected_fg_color;
+   font-weight: normal;
+ 
+   // used to indicate unread notifications
+   .alert { color: $suggested_color; }
+-  
++
+   &:backdrop {
+-      color: white;
++      color: $selected_fg_color;
+       background-color: $panel_bg;
+   }
+ 
+   // transparent-mode
+   &.transparent {
+     background-color: gtkopacity($panel_bg, 0.4);
+-    color: white;
++    color: $selected_fg_color;
+ 
+   }
+ 
+@@ -42,8 +42,16 @@ $z-depth-4: rgba(0, 0, 0, 0.34);
+     min-width: 16px;
+     padding: 0;
+     border-radius: 0;
++    color: $selected_fg_color;
++
++    &:hover {
++        box-shadow: gtkalpha($panel_bg, 0.4);
++        background-color: gtkopacity($panel_bg, 0.4);
++        border-color: gtkopacity($panel_bg, 0.4);
++    }
+   }
+ 
++
+   &.horizontal button { padding: 0 4px; }
+ 
+   &.vertical button { padding: 4px 0; }
+@@ -55,10 +63,10 @@ $z-depth-4: rgba(0, 0, 0, 0.34);
+   .end-region {
+       background-color: rgba(0,0,0,0.3);
+       border-radius: 0px;
+-      separator { background-color: transparentize(white, 0.85); }
++      separator { background-color: transparentize($selected_fg_color, 0.85); }
+       label {
+         font-weight: 700;
+-        color: white;
++        color: $selected_fg_color;
+       }
+   }
+ }
+@@ -331,7 +339,7 @@ button.budgie-menu-launcher {
+   // padding: 0 2px;
+   color: $base_bg_color;
+   border: none;
+-  
++
+   &:hover {
+       background-color: gtkopacity($fg_color, 0.4);
+       border: none;
+@@ -355,9 +363,9 @@ popover.background.user-menu {
+ 
+ // Raven Trigger
+ button.raven-trigger {
+-    color: white;
++    color: $selected_fg_color;
+     border: none;
+-    
++
+     &:hover {
+       background-color: gtkopacity($fg_color, 0.4);
+       border: none;
+-- 
+2.14.1
+

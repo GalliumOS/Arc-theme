@@ -1,0 +1,42 @@
+Description: fix color top bar gnome in gnome-shell
+Applied-Upstream: commit:81c785aea91cf669218fca23611dcd98e4081b77
+Author: Francesco <francesco@debian.domain>
+Bug: https://github.com/NicoHood/arc-theme/pull/46
+Last-Update: 2018-01-27
+---
+ common/gnome-shell/3.18/sass/_common.scss | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/common/gnome-shell/3.18/sass/_common.scss b/common/gnome-shell/3.18/sass/_common.scss
+index 297ea3d..d77df61 100644
+--- a/common/gnome-shell/3.18/sass/_common.scss
++++ b/common/gnome-shell/3.18/sass/_common.scss
+@@ -960,7 +960,7 @@ StScrollBar {
+       & > .system-status-icon { icon-shadow: none; }
+     }
+ 
+-    .system-status-icon { icon-size: 16px; padding: 0 4px; }
++    .system-status-icon { color: $selected_fg_color; icon-size: 16px; padding: 0 4px; }
+     .unlock-screen &,
+     .login-screen &,
+     .lock-screen & {
+@@ -969,11 +969,16 @@ StScrollBar {
+     }
+   }
+ 
++  .panel-button > *{
++    color: $selected_fg_color;
++  }
++
+     #panelActivities.panel-button { -natural-hpadding: 12px; }
+ 
+   .panel-status-indicators-box,
+   .panel-status-menu-box {
+     spacing: 2px;
++    color: $selected_fg_color;
+   }
+ 
+   // spacing between power icon and (optional) percentage label
+-- 
+2.14.1
+

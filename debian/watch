@@ -1,0 +1,2 @@
+version=4
+opts=pgpsigurlmangle=s/$/.asc/ https://github.com/nicohood/arc-theme/releases .*/arc-theme-([0-9.]+)\.tar\.xz

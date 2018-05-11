@@ -1,0 +1,57 @@
+Description: Budgie improvements (#61)
+ * Change the workspace switcher styling on Budgie
+ * Add Raven top padding so that the buttons are seperated from the panel
+ Before the buttons were directly under the panel, which looked kinda
+ buggy, because people are used to the fact that buttons have some space
+ around.
+Applied-Upstream: commit:906add80b420ca3f0cafd01e6f7bb0668e9cf7ff
+Bug: https://github.com/NicoHood/arc-theme/pull/61
+Author: Tim Klocke <taaem@mailbox.org>
+Last-Update: 2018-03-18
+---
+ common/gtk-3.0/3.20/sass/_budgie.scss | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/common/gtk-3.0/3.20/sass/_budgie.scss b/common/gtk-3.0/3.20/sass/_budgie.scss
+index 0ca92ff..7ff68b0 100644
+--- a/common/gtk-3.0/3.20/sass/_budgie.scss
++++ b/common/gtk-3.0/3.20/sass/_budgie.scss
+@@ -237,7 +237,7 @@ $z-depth-4: rgba(0, 0, 0, 0.34);
+ // main menu styling
+ .workspace-switcher {
+   .workspace-layout {
+-    border: 0 solid $bg_color;
++    border: 0 solid $panel_bg;
+ 
+     .top &,
+     .bottom & {
+@@ -252,7 +252,7 @@ $z-depth-4: rgba(0, 0, 0, 0.34);
+ 
+   .workspace-item,
+   .workspace-add-button {
+-    border: 0 solid $bg_color;
++    border: 0 solid darken($panel_bg, 5%);
+ 
+     .top &,
+     .bottom & {
+@@ -267,7 +267,7 @@ $z-depth-4: rgba(0, 0, 0, 0.34);
+ 
+   .workspace-item {
+ 
+-    &.current-workspace { background-color: $bg_color; }
++    &.current-workspace { background-color: darken($panel_bg, 5%); }
+   }
+ 
+   .workspace-add-button {
+@@ -426,7 +426,7 @@ frame.raven-frame > border {
+ .raven {
+   background-color: $bg_color;
+   color: $fg_color;
+-  padding: 0;
++  padding: $container_padding 0 0 0;
+   border: none;
+ 
+   .raven-header {
+-- 
+2.14.1
+

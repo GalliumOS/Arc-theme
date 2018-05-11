@@ -8,6 +8,7 @@ $font-family: Futura Bk bt, sans, Sans-Serif;
 $_bubble_bg_color: opacify($osd_bg_color,0.25);
 $_bubble_fg_color: $osd_fg_color;
 $_bubble_borders_color: transparentize($osd_fg_color,0.8);
+$_shell_fg_color: white;
 
 stage {
   font-family: $font-family;
@@ -159,6 +160,11 @@ StScrollBar {
   border-right-width: 1px;
   border-left-width: 5px;
   color: transparent;
+
+  .popup-menu-item:active & {
+    -slider-background-color: transparentize(black, 0.8);
+    -slider-active-background-color: $selected_fg_color;
+  }
 }
 
 //
@@ -224,11 +230,14 @@ StScrollBar {
   width: 50px;
   height: 20px;
   background-size: contain;
+  background-image: url("#{$asset_path}/switch/switch-off.svg");
 
-  &-us, &-intl {
-    background-image: url("#{$asset_path}/switch/switch-off.svg");
+  &:checked { background-image: url("#{$asset_path}/switch/switch-on.svg"); }
 
-    &:checked { background-image: url("#{$asset_path}/switch/switch-on.svg"); }
+  .popup-menu-item:active & {
+    background-image: url("common-assets/switch/switch-off-selected.svg");
+
+    &:checked { background-image: url("common-assets/switch/switch-on-selected.svg"); }
   }
 }
 
@@ -258,9 +267,9 @@ StScrollBar {
 //
 // Popvers/Menus
 //
-.popup-menu {
-  color: white;
-  min-width: 200px;
+.menu,
+.popup-menu,
+%menu {
   color: $fg_color;
   border-image: url("#{$asset_path}/menu/menu.svg") 9 9 9 9;
 
@@ -286,9 +295,9 @@ StScrollBar {
     spacing: 1em;
 
     &:active {
-      color: $fg_color;
+      color: $selected_fg_color;
       background-color: transparent;
-      border-image: url("#{$asset_path}/menu/menu-hover.svg") 9 9 1 1;
+      border-image: url("common-assets/menu/menu-hover.svg") 9 9 1 1;
     }
     &:insensitive {
       color: transparentize($fg_color, 0.5);
@@ -302,6 +311,8 @@ StScrollBar {
     &:insensitive { color: $insensitive_fg_color; }
   }
 
+  .popup-menu-item:active .popup-inactive-menu-item { color: $selected_fg_color; }
+
   &-icon { icon-size: 16px; }
 }
 
@@ -314,24 +325,20 @@ StScrollBar {
   -arrow-rise: 0;
 }
 
-/*Don't know what this does*/
 .popup-combo-menu {
-  background-color: rgba(0,0,0,0.4);
-  padding: 1em 0em;
-  color: red;
-  border: 1px solid rgba(0,0,0,0.6);
-  border-radius: 3px;
+  @extend %menu;
+  padding: 10px 1px;
 }
 .popup-image-menu-item {}
 
 .popup-combobox-item { spacing: 1em; }
 
 .popup-separator-menu-item {
-  height: 2px; //not really the whole box
-  margin: 10px 0px;
-  background-color: transparent;
-  border: none;
-  border-image: url("common-assets/menu-separator.svg") 1 1 1 1;
+  -gradient-height: 2px;
+  -gradient-start: transparent;
+  -gradient-end: transparent;
+  -margin-horizontal: 1.5em;
+  height: 1em;
 }
 
 .popup-alternating-menu-item:alternate {
@@ -349,8 +356,13 @@ StScrollBar {
 //
 #panel {
   font-weight: bold;
-  height: 2.1em;
-  min-height: 27px;
+  height: 27px;
+  width: 32px;
+
+  &:highlight {
+    border-image: none;
+    background-color: transparentize($error_color, 0.5);
+  }
 
   &Left {
     spacing: 4px;
@@ -360,8 +372,15 @@ StScrollBar {
       background-gradient-start: rgba(255,0,0,0.05);
       background-gradient-end: rgba(255,0,0,0.2);
     }
-    &:ltr ·{ padding-right: 4px; }
-    &:rtl ·{ padding-left: 4px; }
+    &:ltr { padding-right: 4px; }
+    &:rtl { padding-left: 4px; }
+
+    &.vertical {
+      padding: 0;
+
+      &:ltr { padding-right: 0px; }
+      &:rtl { padding-left: 0px; }
+    }
   }
 
   &Right {
@@ -371,8 +390,15 @@ StScrollBar {
       background-gradient-start: rgba(0,0,255,0.05);
       background-gradient-end: rgba(0,0,255,0.2);
     }
-    &:ltr ·{ padding-left: 4px; spacing: 0px; }
-    &:rtl ·{ padding-right: 4px; spacing: 0px; }
+    &:ltr { padding-left: 4px; spacing: 0px; }
+    &:rtl { padding-right: 4px; spacing: 0px; }
+
+    &.vertical {
+      padding: 0;
+
+      &:ltr { padding-right: 0px; }
+      &:rtl { padding-left: 0px; }
+    }
   }
 
   &Center {
@@ -387,18 +413,27 @@ StScrollBar {
 }
 
 .panel {
+  $_panel_fg_color: $_shell_fg_color;
 
-  &-top, &-bottom {
-    color: $selected_fg_color;
+  &-top, &-bottom, &-left, &-right {
+    color: $_panel_fg_color;
     font-size: 1em;
     padding: 0px;
   }
 
   &-top { border-image: url('common-assets/panel/panel-top.svg') 1 1 1 1; }
   &-bottom { border-image: url('common-assets/panel/panel-bottom.svg') 1 1 1 1; }
+  &-left { border-image: url('common-assets/panel/panel-left.svg') 1 1 1 1; }
+  &-right { border-image: url('common-assets/panel/panel-right.svg') 1 1 1 1; }
+
+  &-dummy {
+    background-color: transparentize($error_color, 0.5);
+
+    &:entered { background-color: transparentize($error_color, 0.4); }
+  }
 
   &-status-button {
-    border-widht: 0;
+    border-width: 0;
     -natural-hpadding: 3px;
     -minimum-hpadding: 3px;
     font-weight: bold;
@@ -707,6 +742,11 @@ StScrollBar {
   opacity: 1;
 }
 
+.calendar-week-number {
+  color: transparentize($fg_color, 0.3);
+  font-size: 80%;
+}
+
 //
 // Notifications
 //
@@ -720,8 +760,9 @@ StScrollBar {
   width: 34em;
   color: $osd_fg_color;
 
+  .menu &,
   .popup-menu & {
-    color: $fg_color;
+    &, &.multi-line-notification { color: $fg_color; }
     border-image: url("#{$asset_path}/misc/message.svg") 9 9 9 9;
 
     .notification-button, .notification-icon-button {
@@ -823,7 +864,7 @@ StScrollBar {
 
   &:highlighted {
     border-color: rgba(0,0,0,0);
-    color: $selected_fg_color;
+    color: $_shell_fg_color;
   }
 }
 
@@ -849,12 +890,10 @@ StScrollBar {
 //Activities Ripples
 //
 .ripple-box {
-  width: 52px;
-  height: 52px;
-  background-image: url("common-assets/misc/corner-ripple-ltr.svg");
+  width: 104px;
+  height: 104px;
+  background-image: url("common-assets/misc/corner-ripple.svg");
   background-size: contain;
-
-  &:rtl { background-image: url("common-assets/misc/corner-ripple-rtl.svg"); }
 }
 
 //
@@ -1060,7 +1099,6 @@ StScrollBar {
 //
 .menu {
   &-favorites-box {
-    margin: auto;
     padding: 10px;
     transition-duration: 300;
     background-color: $bg_color;
@@ -1077,7 +1115,6 @@ StScrollBar {
   &-places {
 
     &-box {
-      margin: auto;
       padding: 10px;
       border: 0px solid red;
     }
@@ -1178,7 +1215,7 @@ StScrollBar {
   font-weight: bold;
   spacing: 1em;
   padding: 16px;
-  color: $selected_fg_color;
+  color: $_shell_fg_color;
   border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
 }
 
@@ -1191,7 +1228,7 @@ StScrollBar {
   min-width: 64px;
   min-height: 64px;
 
-  color: $selected_fg_color;
+  color: $_shell_fg_color;
   background: none;
   border: none;
   border-radius: 5px;
@@ -1219,6 +1256,13 @@ StScrollBar {
 
     .panel-bottom & { padding-top: 1px; }
     .panel-top & { padding-bottom: 1px; }
+
+    &.vertical {
+      spacing: 4px;
+      padding: 10px 0;
+    }
+
+    &:highlight { background-color: transparentize($error_color, 0.5); }
   }
 
   &-item-label {
@@ -1230,21 +1274,28 @@ StScrollBar {
   &-item-box {
     font-weight: bold;
     background-image: none;
+    padding-top: 0;
     padding-left: 8px;
     padding-right: 8px;
     transition-duration: 100;
-    color: transparentize($selected_fg_color, 0.4);
+    color: transparentize($_shell_fg_color, 0.4);
 
-    &:hover {color: $selected_fg_color;}
+    &:hover {color: $_shell_fg_color;}
 
     &:active,
     &:checked,
     &:focus {
-      color: $selected_fg_color;
+      color: $_shell_fg_color;
 
       .panel-bottom & { border-image: url("common-assets/panel/window-list-active-bottom.svg") 3 3 1 3; }
-
       .panel-top & { border-image: url("common-assets/panel/window-list-active-top.svg") 3 3 3 1; }
+      .panel-left & { border-image: url("common-assets/panel/window-list-active-left.svg") 3 1 3 3; }
+      .panel-right & { border-image: url("common-assets/panel/window-list-active-right.svg") 1 3 3 3; }
+    }
+
+    &.right, &.left {
+      padding-left: 0px;
+      padding-right: 0px;
     }
   }
 
@@ -1438,9 +1489,14 @@ StScrollBar {
 //
 #panel-launchers-box {
   padding-left: 7px;
+
+  &.vertical {
+    padding: 2px 0;
+  }
 }
 
-.panel-launcher {
+.panel-launcher,
+.launcher {
   margin: 1px;
   padding: 1px;
   transition-duration: 200;
@@ -1451,7 +1507,19 @@ StScrollBar {
 
     .panel-bottom & { border-bottom-width: 1px; }
     .panel-top & { border-top-width: 1px; }
+    .panel-left & { border-left-width: 1px; padding-left: 0; }
+    .panel-right & { border-right-width: 1px; padding-right: 0; }
   }
+
+  .panel-bottom & {
+    margin-bottom: 0;
+  }
+
+  .panel-top & {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
 }
 
 //
@@ -1477,19 +1545,29 @@ StScrollBar {
   &-box {
     padding-left: 3px;
     padding-right: 3px;
-    color: $selected_fg_color;
+    color: $_shell_fg_color;
     text-shadow: none;
     transition-duration: 100;
+
+    &.vertical {
+      padding: 3px 0;
+    }
 
     &:hover {
       color: $selected_fg_color;
       background-color: $selected_bg_color;
     }
+
+    &:highlight {
+      background-image: none;
+      border-image: none;
+      background-color: transparentize($error_color, 0.5);
+    }
   }
 
   &-label {
     font-weight: bold;
-    color: $selected_fg_color;
+    color: $_shell_fg_color;
 
     &:hover, .applet-box:hover > & {
       color: $selected_fg_color;
@@ -1498,7 +1576,7 @@ StScrollBar {
   }
 
   &-icon {
-    color: $selected_fg_color;
+    color: $_shell_fg_color;
     icon-size: 22px;
 
     &:hover, .applet-box:hover > & {
@@ -1533,11 +1611,19 @@ StScrollBar {
 .desklet {
   color: $osd_fg_color;
 
+  &:highlight {
+    background-color: transparentize($error_color, 0.5);
+  }
+
   &-with-borders {
     border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
     color: $osd_fg_color;
     padding: 12px;
     padding-bottom: 16px;
+
+    &:highlight {
+      background-color: transparentize($error_color, 0.5);
+    }
   }
   &-with-borders-and-header {
     border-image: url("common-assets/misc/desklet.svg") 9 9 9 9;
@@ -1547,6 +1633,10 @@ StScrollBar {
     border-radius-topright: 0;
     padding: 12px;
     padding-bottom: 17px;
+
+    &:highlight {
+      background-color: transparentize($error_color, 0.5);
+    }
   }
   &-header {
     border-image: url("common-assets/misc/desklet-header.svg") 9 9 9 9;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //NemoWindow GtkEventBox { background-color: $bg_color; } // fixes nemo statusbar
 
 //NemoWindow,
@@ -11,6 +12,23 @@
 }
 
 filechooser paned > separator { background-image: linear-gradient(to top, $dark_sidebar_border); }
+=======
+//.nemo-window GtkEventBox { background-color: $bg_color; } // fixes nemo statusbar
+
+//.nemo-window,
+.nautilus-window {
+  paned > separator {
+    background-image: _solid($dark_sidebar_border);
+
+    @if $variant=='light' {
+      &:dir(ltr) { margin-left: -1px; }
+      &:dir(rtl) { margin-right: -1px; }
+    }
+  }
+}
+
+filechooser paned > separator { background-image: _solid($dark_sidebar_border); }
+>>>>>>> vendor
 
 // Dark transparent sidebars
 filechooser,
@@ -75,6 +93,7 @@ filechooser,
   &.maximized placessidebar.sidebar { background-color: opacify($dark_sidebar_bg, 1); }
 }
 
+<<<<<<< HEAD
 
 //NemoWindow,
 //MarlinViewWindow {
@@ -109,6 +128,56 @@ filechooser,
 
 //NemoWindow.background > GtkGrid > paned > separator,
 //MarlinViewWindow.background > GtkBox > paned > separator { background-color: $dark_sidebar_border }
+=======
+.nemo-window {
+  .sidebar {
+    color: $dark_sidebar_fg;
+    background-color: $dark_sidebar_bg;
+
+    .view, row {
+      background-color: transparent;
+      color: $dark_sidebar_fg;
+
+      &.cell:selected {
+        background-color: $selected_bg_color;
+        color: $selected_fg_color;
+      }
+
+      &.expander {
+        color: mix($dark_sidebar_fg, $dark_sidebar_bg, 50%);
+
+        &:hover { color: $dark_sidebar_fg; }
+      }
+    }
+
+    separator { background-color: transparent; }
+
+    scrollbar { @extend %dark_sidebar_scrollbar }
+  }
+}
+
+.caja-side-pane {
+
+  &,
+  > notebook > stack > widget > box,
+  text,
+  treeview {
+    color: $dark_sidebar_fg;
+    caret-color: $dark_sidebar_fg;
+    background-color: opacify($dark_sidebar_bg, 1);
+  }
+
+  > box button {
+    &:not(:active):not(:checked) { color: $dark_sidebar_fg; }
+    &:hover:not(:active) { @extend %dark_sidebar_button:hover; }
+  }
+
+  .frame { border-color: darken(opacify($dark_sidebar_bg, 1), 5%); }
+
+  scrollbar { @extend %dark_sidebar_scrollbar; }
+  junction { background-color: darken($dark_sidebar_bg, 5%); }
+}
+>>>>>>> vendor
 
 filechooser {
 
@@ -129,6 +198,12 @@ filechooser {
 // Gedit
 .gedit-bottom-panel-paned { background-color: $base_color; }
 
+<<<<<<< HEAD
+=======
+.gedit-side-panel-paned > separator { background-image: _solid($dark_sidebar_border); }
+.gedit-bottom-panel-paned > separator { background-image: _solid($borders_color); }
+
+>>>>>>> vendor
 .gedit-document-panel {
   background-color: $dark_sidebar_bg;
 
@@ -174,6 +249,11 @@ filechooser {
 
 %dark_sidebar_scrollbar {
 
+<<<<<<< HEAD
+=======
+  border-color: darken($dark_sidebar_bg, 5%);
+
+>>>>>>> vendor
   &.overlay-indicator:not(.dragging):not(.hovering) slider {
     background-color: lighten($dark_sidebar_fg, 15%);
     border: 1px solid transparentize(black, 0.7);
@@ -190,7 +270,11 @@ filechooser {
     }
   }
   trough {
+<<<<<<< HEAD
     background-color: transparentize(black, 0.8);
     border: none;
+=======
+    background-color: darken($dark_sidebar_bg, 5%);
+>>>>>>> vendor
   }
 }
