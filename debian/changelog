@@ -2,7 +2,7 @@ arc-theme (20180114-1ubuntu1-galliumos0) bismuth; urgency=medium
 
   * Prepare for GalliumOS 3.0
 
- -- reynhout <reynhout@galliumos>  Fri, 11 May 2018 03:08:44 +0000
+ -- reynhout <reynhout@galliumos.org>  Sun, 13 May 2018 04:26:15 +0000
 
 arc-theme (20180114-1ubuntu1) bionic; urgency=medium
 
@@ -18,7 +18,6 @@ arc-theme (20180114-1ubuntu1) bionic; urgency=medium
       0001-Fix-bouncing-launcher-icons-in-cinnamon-51.patch
     - GNOME Shell top-bar color
       0001-fix-color-top-bar-gnome-in-gnome-shell.patch
-
  -- David Mohammed <fossfreedom@ubuntu.com>  Sun, 01 Apr 2018 13:41:56 +0100
 
 arc-theme (20180114-1) unstable; urgency=medium
@@ -107,62 +106,3 @@ arc-theme (20160605-1) unstable; urgency=medium
   * Initial Release (Closes: #826762)
 
  -- David Mohammed <foss.freedom@gmail.com>  Wed, 08 Jun 2016 19:16:45 +0100
-
-arc-theme-galliumos (0git20160407.46a232e-galliumos4) stable; urgency=medium
-
-  * Fixed shadows to avoid rendering with gtk-murrine
-
- -- David Muckle <dvdmuckle@galliumos>  Thu, 04 Aug 2016 22:32:50 -0400
-
-arc-theme-galliumos (0git20160407.46a232e-galliumos3) stable; urgency=low
-
-  * Changed the xthickness and ythickness back to 0 for buttons
-  * Changed the xthickness to 2 for panel buttons
-
- -- Hugh Greenberg <hugh@galliumos.org>  Tue, 19 Apr 2016 21:05:33 +0000
-
-arc-theme-galliumos (0git20160407.46a232e-galliumos2) stable; urgency=low
-
-  * Synced upstream
-  * Removed dotted line in scroll views
-  * Changed xthickness and ythickness for buttons to be the default
-  * upstream: https://github.com/horst3180/Arc-theme
-
- -- Hugh Greenberg <hugh@galliumos.org>  Thu, 07 Apr 2016 21:05:33 +0000
-
-arc-theme-galliumos (1.0.5-0ubuntu1) stable; urgency=low
-
-  * Add more visible highlighting to focused state of buttons (reynhout)
-
- -- Hugh Greenberg <hugh@galliumos.org>  Wed, 28 Oct 2015 11:32:38 +0100
-
-arc-theme-galliumos (1.0.4-0ubuntu1) stable; urgency=low
-
-  * Changed button-hover.png so you can see it better on some Chromebook screens
-
- -- Hugh Greenberg <hugh@galliumos.org>  Mon, 26 Oct 2015 11:32:38 +0100
-
-arc-theme-galliumos (1.0.3-0ubuntu1) stable; urgency=low
-
-  * A fix for the xfce4-mixer icon
-
- -- Hugh Greenberg <hugh@galliumos.org>  Fri, 16 Oct 2015 11:32:38 +0100
-
-arc-theme-galliumos (1.0.2-0ubuntu1) stable; urgency=low
-
-  * xfwm4 themes so resizing on the corners and sides works
-
- -- Hugh Greenberg <hugh@galliumos.org>  Fri, 16 Oct 2015 11:32:38 +0100
-
-arc-theme-galliumos (1.0.1-0ubuntu1) stable; urgency=low
-
-  * Modified panel icon size
-  * Change directories
-
- -- Hugh Greenberg <hugh@galliumos.org>  Wed, 15 Oct 2015 11:32:38 +0100
-
-arc-theme-galliumos (1.0-0ubuntu1) stable; urgency=low
-
-  * Initial Package Release
-
- -- Hugh Greenberg <hugh@galliumos.org>  Wed, 15 Oct 2015 11:32:38 +0100
