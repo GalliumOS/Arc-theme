@@ -1,13 +1,10 @@
 // Drawing mixins
 
-<<<<<<< HEAD:common/gtk-3.0/3.16/sass/_drawing.scss
-=======
 // Solid color image
 @function _solid($c) {
   @return linear-gradient(to bottom, $c, $c);
 }
 
->>>>>>> vendor:common/gtk-3.0/3.20/sass/_drawing.scss
 // Entries
 
 @mixin entry($t) {

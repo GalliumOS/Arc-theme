@@ -1,18 +1,6 @@
-<<<<<<< HEAD
 themedir        = $(datadir)/themes/Arc-GalliumOS
 themedarkerdir  = $(datadir)/themes/Arc-Darker-GalliumOS
 themedarkdir    = $(datadir)/themes/Arc-Dark-GalliumOS
-=======
-if !ENABLE_TRANSPARENCY
-themedir        = $(datadir)/themes/Arc-solid
-themedarkerdir  = $(datadir)/themes/Arc-Darker-solid
-themedarkdir    = $(datadir)/themes/Arc-Dark-solid
-else
-themedir        = $(datadir)/themes/Arc
-themedarkerdir  = $(datadir)/themes/Arc-Darker
-themedarkdir    = $(datadir)/themes/Arc-Dark
-endif
->>>>>>> vendor
 
 ithemedir       = $(DESTDIR)$(themedir)
 ithemedarkerdir = $(DESTDIR)$(themedarkerdir)
@@ -43,13 +31,10 @@ endif # ENABLE_DARK
 if ENABLE_CINNAMON
 	$(MKDIR_P) $(ithemedir)/cinnamon
 
-<<<<<<< HEAD
-=======
 	cd $(srcdir)/cinnamon && cp thumbnail.png $(ithemedir)/cinnamon
 
 	sassc $(srcdir)/cinnamon/sass/cinnamon.scss $(srcdir)/cinnamon/cinnamon.css;
 
->>>>>>> vendor
 	cd $(srcdir)/cinnamon && cp -R \
 		common-assets \
 		light-assets \
@@ -59,13 +44,10 @@ if ENABLE_CINNAMON
 if ENABLE_DARK
 	$(MKDIR_P) $(ithemedarkdir)/cinnamon
 
-<<<<<<< HEAD
-=======
 	cd $(srcdir)/cinnamon && cp thumbnail-dark.png $(ithemedarkdir)/cinnamon/thumbnail.png
 
 	sassc $(srcdir)/cinnamon/sass/cinnamon-dark.scss $(srcdir)/cinnamon/cinnamon-dark.css;
 
->>>>>>> vendor
 	cd $(srcdir)/cinnamon && cp -R \
 		common-assets \
 		dark-assets \
@@ -82,11 +64,8 @@ endif # ENABLE_GNOME_SHELL
 if ENABLE_GNOME_SHELL
 	$(MKDIR_P) $(ithemedir)/gnome-shell
 
-<<<<<<< HEAD
-=======
 	sassc $(srcdir)/gnome-shell/$(GNOME_VERSION)/sass/gnome-shell.scss $(srcdir)/gnome-shell/$(GNOME_VERSION)/gnome-shell.css;
 
->>>>>>> vendor
 	cd $(srcdir)/gnome-shell/$(GNOME_VERSION) && cp -R \
 		common-assets \
 		light-assets \
@@ -96,11 +75,8 @@ if ENABLE_GNOME_SHELL
 if ENABLE_DARK
 	$(MKDIR_P) $(ithemedarkdir)/gnome-shell
 
-<<<<<<< HEAD
-=======
 	sassc $(srcdir)/gnome-shell/$(GNOME_VERSION)/sass/gnome-shell-dark.scss $(srcdir)/gnome-shell/$(GNOME_VERSION)/gnome-shell-dark.css;
 
->>>>>>> vendor
 	cd $(srcdir)/gnome-shell/$(GNOME_VERSION) && cp -R \
 		common-assets \
 		dark-assets \
@@ -166,14 +142,11 @@ if ENABLE_GTK3
 if ENABLE_LIGHT
 	$(MKDIR_P) $(ithemedir)/gtk-3.0
 
-<<<<<<< HEAD
-=======
 	cd $(srcdir)/gtk-3.0 && cp thumbnail.png $(ithemedir)/gtk-3.0
 
 	sassc $(srcdir)/gtk-3.0/$(GNOME_VERSION)/sass/gtk.scss $(srcdir)/gtk-3.0/$(GNOME_VERSION)/gtk.css;
 	sassc $(srcdir)/gtk-3.0/$(GNOME_VERSION)/sass/gtk-dark.scss $(srcdir)/gtk-3.0/$(GNOME_VERSION)/gtk-dark.css;
 
->>>>>>> vendor
 	cd $(srcdir)/gtk-3.0/$(GNOME_VERSION) && cp -R \
 		assets \
 		gtk.css \
@@ -184,15 +157,12 @@ endif # ENABLE_LIGHT
 if ENABLE_DARKER
 	$(MKDIR_P) $(ithemedarkerdir)/gtk-3.0
 
-<<<<<<< HEAD
-=======
 	cd $(srcdir)/gtk-3.0 && cp thumbnail.png $(ithemedarkerdir)/gtk-3.0
 
 	sassc $(srcdir)/gtk-3.0/$(GNOME_VERSION)/sass/gtk-dark.scss $(srcdir)/gtk-3.0/$(GNOME_VERSION)/gtk-dark.css;
 	sassc $(srcdir)/gtk-3.0/$(GNOME_VERSION)/sass/gtk-darker.scss $(srcdir)/gtk-3.0/$(GNOME_VERSION)/gtk-darker.css;
 	sassc $(srcdir)/gtk-3.0/$(GNOME_VERSION)/sass/gtk.scss $(srcdir)/gtk-3.0/$(GNOME_VERSION)/gtk.css;
 
->>>>>>> vendor
 	cd $(srcdir)/gtk-3.0/$(GNOME_VERSION) && cp -R \
 		assets \
 		gtk-dark.css \
@@ -206,21 +176,15 @@ endif # ENABLE_DARKER
 if ENABLE_DARK
 	$(MKDIR_P) $(ithemedarkdir)/gtk-3.0
 
-<<<<<<< HEAD
-=======
 	cd $(srcdir)/gtk-3.0 && cp thumbnail-dark.png $(ithemedarkdir)/gtk-3.0/thumbnail.png
 
->>>>>>> vendor
 	cd $(srcdir)/gtk-3.0/$(GNOME_VERSION) && cp -R \
 		assets \
 		$(ithemedarkdir)/gtk-3.0
 
-<<<<<<< HEAD
-=======
 	sassc $(srcdir)/gtk-3.0/$(GNOME_VERSION)/sass/gtk-dark.scss $(srcdir)/gtk-3.0/$(GNOME_VERSION)/gtk-dark.css;
 	sassc $(srcdir)/gtk-3.0/$(GNOME_VERSION)/sass/gtk.scss $(srcdir)/gtk-3.0/$(GNOME_VERSION)/gtk.css;
 
->>>>>>> vendor
 	cd $(srcdir)/gtk-3.0/$(GNOME_VERSION) && cp -R \
 		gtk-dark.css \
 		$(ithemedarkdir)/gtk-3.0/gtk.css
@@ -229,14 +193,11 @@ endif # ENABLE_DARK
 if !ENABLE_TRANSPARENCY
 
 if ENABLE_LIGHT
-<<<<<<< HEAD
-=======
 	sassc $(srcdir)/gtk-3.0/$(GNOME_VERSION)/sass/gtk-solid.scss $(srcdir)/gtk-3.0/$(GNOME_VERSION)/gtk-solid.css;
 	sassc $(srcdir)/gtk-3.0/$(GNOME_VERSION)/sass/gtk-solid-dark.scss $(srcdir)/gtk-3.0/$(GNOME_VERSION)/gtk-solid-dark.css;
 	sassc $(srcdir)/gtk-3.0/$(GNOME_VERSION)/sass/gtk.scss $(srcdir)/gtk-3.0/$(GNOME_VERSION)/gtk.css;
 	sassc $(srcdir)/gtk-3.0/$(GNOME_VERSION)/sass/gtk-dark.scss $(srcdir)/gtk-3.0/$(GNOME_VERSION)/gtk-dark.css;
 
->>>>>>> vendor
 	cd $(srcdir)/gtk-3.0/$(GNOME_VERSION) && cp -R \
 		gtk-solid.css \
 		$(ithemedir)/gtk-3.0/gtk.css
@@ -247,14 +208,11 @@ if ENABLE_LIGHT
 endif # ENABLE_LIGHT
 
 if ENABLE_DARKER
-<<<<<<< HEAD
-=======
 	sassc $(srcdir)/gtk-3.0/$(GNOME_VERSION)/sass/gtk-solid-darker.scss $(srcdir)/gtk-3.0/$(GNOME_VERSION)/gtk-solid-darker.css;
 	sassc $(srcdir)/gtk-3.0/$(GNOME_VERSION)/sass/gtk-solid-dark.scss $(srcdir)/gtk-3.0/$(GNOME_VERSION)/gtk-solid-dark.css;
 	sassc $(srcdir)/gtk-3.0/$(GNOME_VERSION)/sass/gtk.scss $(srcdir)/gtk-3.0/$(GNOME_VERSION)/gtk.css;
 	sassc $(srcdir)/gtk-3.0/$(GNOME_VERSION)/sass/gtk-dark.scss $(srcdir)/gtk-3.0/$(GNOME_VERSION)/gtk-dark.css;
 
->>>>>>> vendor
 	cd $(srcdir)/gtk-3.0/$(GNOME_VERSION) && cp -R \
 		gtk-solid-darker.css \
 		$(ithemedarkerdir)/gtk-3.0/gtk.css
@@ -265,12 +223,9 @@ if ENABLE_DARKER
 endif # ENABLE_DARKER
 
 if ENABLE_DARK
-<<<<<<< HEAD
-=======
 	sassc $(srcdir)/gtk-3.0/$(GNOME_VERSION)/sass/gtk-solid-dark.scss $(srcdir)/gtk-3.0/$(GNOME_VERSION)/gtk-solid-dark.css;
 	sassc $(srcdir)/gtk-3.0/$(GNOME_VERSION)/sass/gtk.scss $(srcdir)/gtk-3.0/$(GNOME_VERSION)/gtk.css;
 
->>>>>>> vendor
 	cd $(srcdir)/gtk-3.0/$(GNOME_VERSION) && cp -R \
 		gtk-solid-dark.css \
 		$(ithemedarkdir)/gtk-3.0/gtk.css
@@ -337,26 +292,6 @@ endif # ENABLE_DARK
 endif # ENABLE_UNITY
 
 
-<<<<<<< HEAD
-if ENABLE_XFCE_NOTIFY
-	$(MKDIR_P) $(ithemedir)
-	cp -R $(srcdir)/xfce-notify-4.0 $(ithemedir)
-endif # ENABLE_XFCE_NOTIFY
-
-
-if ENABLE_XFWM
-
-if ENABLE_LIGHT
-	cp -R $(srcdir)/xfwm4 $(ithemedir)
-endif # ENABLE_LIGHT
-
-if ENABLE_DARKER
-	cp -R $(srcdir)/xfwm4-dark $(ithemedarkerdir)/xfwm4
-endif # ENABLE_DARKER
-
-if ENABLE_DARK
-	cp -R $(srcdir)/xfwm4-dark $(ithemedarkdir)/xfwm4
-=======
 if ENABLE_XFWM
 
 if ENABLE_LIGHT
@@ -381,7 +316,6 @@ if ENABLE_DARK
 	cd $(srcdir)/xfwm4 && \
 		cp -R assets-dark/*.png $(ithemedarkdir)/xfwm4 && \
 		cp themerc-dark $(ithemedarkdir)/xfwm4/themerc
->>>>>>> vendor
 endif # ENABLE_DARK
 
 endif # ENABLE_XFWM

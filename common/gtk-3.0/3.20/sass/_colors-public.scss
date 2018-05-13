@@ -43,11 +43,7 @@ $wm_bg_unfocused: opacify($header_bg_backdrop, 1);
 @define-color wm_bg_unfocused #{"" + $wm_bg_unfocused};
 
 @define-color wm_highlight #{"" + $wm_highlight};
-<<<<<<< HEAD:common/gtk-3.0/3.14/sass/_colors-public.scss
-@define-color wm_shadow gtkalpha(#{black}, 0.35);
-=======
 @define-color wm_shadow alpha(#{black}, 0.35);
->>>>>>> vendor:common/gtk-3.0/3.20/sass/_colors-public.scss
 
 //WM Buttons
 

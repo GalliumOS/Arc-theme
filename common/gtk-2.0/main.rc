@@ -2200,10 +2200,6 @@ style "eclipse-tooltips" {
 style "xfdesktop-icon-view" {
   XfdesktopIconView::label-alpha = 0
   XfdesktopIconView::selected-label-alpha = 100
-<<<<<<< HEAD
-
-=======
->>>>>>> vendor
   XfdesktopIconView::shadow-x-offset = 0
   XfdesktopIconView::shadow-y-offset = 1
   XfdesktopIconView::selected-shadow-x-offset = 0
@@ -2217,10 +2213,6 @@ style "xfdesktop-icon-view" {
 
   fg[NORMAL] = @selected_fg_color
   fg[ACTIVE] = @selected_fg_color
-<<<<<<< HEAD
-
-=======
->>>>>>> vendor
 }
 
 style "xfwm-tabwin" {

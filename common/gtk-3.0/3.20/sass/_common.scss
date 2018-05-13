@@ -15,12 +15,6 @@ $darker_asset_suffix: if($darker=='true', '-dark', $asset_suffix);
   -GtkScrolledWindow-scrollbar-spacing: 0;
 
   -GtkToolItemGroup-expander-size: 11;
-<<<<<<< HEAD
-  -GtkTreeView-expander-size: 11;
-
-  -GtkTreeView-horizontal-separator: 4;
-=======
->>>>>>> vendor
 
   -GtkWidget-text-handle-width: 20;
   -GtkWidget-text-handle-height: 20;
@@ -29,11 +23,7 @@ $darker_asset_suffix: if($darker=='true', '-dark', $asset_suffix);
   -GtkDialog-action-area-border: 0;
 
   // We use the outline properties to signal the focus properties
-<<<<<<< HEAD
-  outline-color: transparentize($fg_color, 0.7);
-=======
   outline-color: gtkalpha(currentColor, 0.3);
->>>>>>> vendor
   outline-style: dashed;
   outline-offset: -3px;
   outline-width: 1px;
@@ -94,35 +84,7 @@ textview {
   }
 }
 
-<<<<<<< HEAD
-textview border {
-  background-color: mix($bg_color, $base_color, 50%);
-  background-image: image(transparentize(black, 0.8)); // HACK: the border node just draws background so,
-  background-repeat: no-repeat;                        // using a background-image to draw the border
-
-  &.bottom {
-    background-size: 100% 1px;
-    background-position: top;
-  }
-
-  &.top {
-    background-size: 100% 1px;
-    background-position: bottom;
-  }
-
-  &.left {
-    background-size: 1px 100%;
-    background-position: right;
-  }
-
-  &.right {
-    background-size: 1px 100%;
-    background-position: left;
-  }
-}
-=======
 textview border { background-color: mix($bg_color, $base_color, 50%); }
->>>>>>> vendor
 
 iconview { @extend .view; }
 
@@ -198,10 +160,6 @@ textview { // This will get overridden by .view, needed by gedit line numbers
   border: none;
   background-color: $osd_bg_color;
   background-clip: padding-box;
-<<<<<<< HEAD
-  outline-color: transparentize($osd_fg_color, 0.7);
-=======
->>>>>>> vendor
   box-shadow: none;
 }
 
@@ -270,24 +228,6 @@ entry {
   selection { &:focus, & { @extend %selected_items; }}
 
   // error and warning style
-<<<<<<< HEAD
-  @each $e_type, $e_color in (warning, $warning_color),
-                             (error, $error_color) {
-    &.#{$e_type} {
-      color: $selected_fg_color;
-      border-color: if($variant=='light', $e_color, $entry_border);
-      background-image: linear-gradient(to bottom, mix($e_color, $base_color, 60%));
-
-      image { color: $selected_fg_color; }
-
-      &:focus {
-        color: $selected_fg_color;
-        background-image: linear-gradient(to bottom, $e_color);
-        box-shadow: none;
-      }
-      selection, selection:focus {
-        background-color: $selected_fg_color;
-=======
   @each $e_type, $e_color, $e_fg_color in (warning, $warning_color, $warning_fg_color),
                                           (error, $error_color, $error_fg_color),
                                           // entry.search-missing for Gnome-Builder
@@ -306,7 +246,6 @@ entry {
       }
       selection, selection:focus {
         background-color: $e_fg_color;
->>>>>>> vendor
         color: $e_color;
       }
     }
@@ -423,11 +362,8 @@ button {
 
     background-clip: if($variant=='light', border-box, padding-box);
     transition-duration: 50ms;
-<<<<<<< HEAD
-=======
 
     &:not(:disabled) label:disabled { color: inherit; opacity: 0.6; }
->>>>>>> vendor
   }
 
   //Webkitgtk workaround start
@@ -487,10 +423,6 @@ button {
   // big standalone buttons like in Documents pager
   &.osd {
     color: $osd_fg_color;
-<<<<<<< HEAD
-    outline-color: transparentize($osd_fg_color, 0.7);
-=======
->>>>>>> vendor
     background-color: $osd_bg_color;
     border-color: darken($osd_bg_color, 8%);
 
@@ -531,37 +463,20 @@ button {
   .osd .linked:not(.vertical):not(.path-bar) > &:hover:not(:checked):not(:active) + &:not(:checked):not(:active) { box-shadow: none; }
 
   // Suggested and Destructive Action buttons
-<<<<<<< HEAD
-  @each $b_type, $b_color in (suggested-action, $suggested_color),
-                             (destructive-action, $destructive_color) {
-    &.#{$b_type} {
-      @include button(suggested_destructive, $b_color);
-=======
   @each $b_type, $b_color, $b_fg in (suggested-action, $suggested_color, $suggested_fg_color),
                                     (destructive-action, $destructive_color, $destructive_fg_color) {
     &.#{$b_type} {
       @include button(suggested_destructive, $b_color, $b_fg);
->>>>>>> vendor
 
       &.flat {
         @include button(undecorated);
         color: $b_color;
-<<<<<<< HEAD
-        outline-color: transparentize($b_color, 0.7);
-      }
-      &:hover {
-        @include button(suggested_destructive, lighten($b_color, 10%));
-      }
-      &:active, &:checked {
-        @include button(suggested_destructive, darken($b_color, 10%));
-=======
       }
       &:hover {
         @include button(suggested_destructive, lighten($b_color, 10%), $b_fg);
       }
       &:active, &:checked {
         @include button(suggested_destructive, darken($b_color, 10%), $b_fg);
->>>>>>> vendor
       }
       &.flat:disabled {
         @include button(undecorated);
@@ -627,13 +542,10 @@ button {
     }
   }
 
-<<<<<<< HEAD
-=======
   // hide separators
   &.font,
   &.file { separator { background-color: transparent; }}
 
->>>>>>> vendor
   //inline-toolbar buttons
   .inline-toolbar &, .inline-toolbar &:backdrop {
     border-radius: 2px;
@@ -688,12 +600,8 @@ toolbar.inline-toolbar toolbutton {
     > entry.warning + entry,
     > entry + entry.warning { border-#{$_border}-color: if($var=='light', $warning_color, transparentize($e_border, $a)); }
 
-<<<<<<< HEAD
-    > entry.error + entry.warning { border-#{$_border}-color: if($var=='light', $error_color, transparentize($e_border, $a));}
-=======
     > entry.error + entry.warning,
     > entry.warning + entry.error { border-#{$_border}-color: if($var=='light', mix($error_color, $warning_color, 50%), transparentize($e_border, $a));}
->>>>>>> vendor
 
     @each $e_type, $e_color in (':focus',$selected_bg_color),
                                (':drop(active)', $drop_target_color),
@@ -709,19 +617,6 @@ toolbar.inline-toolbar toolbutton {
         + combobox > box > button.combo { border-#{$_border}-color: if($var=='light', $e_color, $e_border); }
       }
     }
-<<<<<<< HEAD
-    > button:checked + entry { border-#{$_border}-color: if($var=='light', $selected_bg_color, $e_border); }
-  }
-  @if $button_rules=='true' {
-    > button + button { border-#{$_border}-style: none; }
-
-    > button:hover:not(:checked):not(:active):not(:only-child),
-    > button:hover:not(:checked):not(:active) + button:not(:checked):not(:active) { box-shadow: inset if($vert=='false', 1px 0, 0 1px) $b_border; }
-
-    > button:first-child:hover:not(:checked):not(:active),
-    > button:checked + button:not(:checked):not(:active):hover,
-    > entry + button:not(:checked):not(:active):not(:only-child):hover { box-shadow: none; }
-=======
     > button:active + entry,
     > button:checked + entry { border-#{$_border}-color: if($var=='light', $selected_bg_color, $e_border); }
   }
@@ -750,26 +645,12 @@ toolbar.inline-toolbar toolbutton {
     > button.suggested-action + #{$_uncolored_button}:disabled,
     > button.destructive-action + #{$_uncolored_button}:disabled,
     > entry + #{$_uncolored_button}:disabled:not(:only-child), { box-shadow: none; }
->>>>>>> vendor
   }
 }
 
 // special case, because path-bars are bugged
 @mixin pathbar_linking_rules($sep_color:if($variant=='light', transparentize($button_border, 0.6), transparentize($button_border, 0.5))) {
 
-<<<<<<< HEAD
-    > button + button { border-left-style: none; }
-
-    > button:hover:not(:checked):not(:active):not(:only-child) {
-
-      &:hover {
-        box-shadow: inset  1px 0 $sep_color,
-                    inset -1px 0 $sep_color;
-      }
-      &:first-child:hover { box-shadow: inset -1px 0 $sep_color; }
-      &:last-child:hover { box-shadow: inset 1px 0 $sep_color; }
-    }
-=======
   > button + button { border-left-style: none; }
 
   > button:hover:not(:checked):not(:active):not(:only-child) {
@@ -781,7 +662,6 @@ toolbar.inline-toolbar toolbutton {
     &:first-child:hover { box-shadow: inset -1px 0 $sep_color; }
     &:last-child:hover { box-shadow: inset 1px 0 $sep_color; }
   }
->>>>>>> vendor
 }
 
 // Apply the rules defined above
@@ -929,12 +809,9 @@ spinbutton {
     > button:hover:not(:active),
     > button:hover + button { box-shadow: inset 1px 0 $button_border; }
 
-<<<<<<< HEAD
-=======
     > button:disabled + button:not(:disabled):not(:active):not(:checked):not(:hover),
     > button:not(:disabled):not(:active):not(:checked):not(:hover) + button:disabled { box-shadow: inset 1px 0 transparentize($button_border, 0.5); }
 
->>>>>>> vendor
     > button:first-child:hover:not(:active),
     > button.up:dir(rtl):hover:not(:active),
     > entry + button:not(:active):hover { box-shadow: none; }
@@ -1050,11 +927,7 @@ toolbar {
   }
 }
 
-<<<<<<< HEAD
-.primary-toolbar {
-=======
 .primary-toolbar:not(.libreoffice-toolbar) {  // LO messes up the toolbar styling, so exclude LO toolbars
->>>>>>> vendor
   color: $header_fg;
   background-color: opacify($header_bg, 1);
   box-shadow: none;
@@ -1066,17 +939,10 @@ toolbar {
   //&:backdrop { background-color: opacify($header_bg_backdrop, 1); }
 
   separator { @extend %header_separator; }
-<<<<<<< HEAD
-
-  @extend %header_widgets;
-}
-
-=======
 }
 
 .primary-toolbar { @extend %header_widgets; }
 
->>>>>>> vendor
 .inline-toolbar {
   @extend toolbar;
   background-color: darken($bg_color, 3%);
@@ -1148,22 +1014,14 @@ headerbar,
 
   // Selectionmode
   &.selection-mode {
-<<<<<<< HEAD
-    color: $selected_fg_color;
-=======
     color: $selection_mode_fg;
->>>>>>> vendor
     background-color: $selection_mode_bg;
     border-color: darken($selection_mode_bg, 4%);
     box-shadow: none;
 
     &:backdrop {
       background-color: $selection_mode_bg;
-<<<<<<< HEAD
-      color: transparentize($selected_fg_color, 0.4);
-=======
       color: transparentize($selection_mode_fg, 0.4);
->>>>>>> vendor
     }
 
     .subtitle:link { @extend *:link:selected;  }
@@ -1252,11 +1110,7 @@ headerbar {
     }
   }
 
-<<<<<<< HEAD
-  > separator { background-image: linear-gradient(to top, $header_border); }
-=======
   > separator { background-image: _solid($header_border); }
->>>>>>> vendor
 
   @extend %titlebar;
 }
@@ -1302,21 +1156,6 @@ headerbar {
       background-color: transparent;
     }
 
-<<<<<<< HEAD
-    @each $e_type, $e_color in (warning, $warning_color),
-                               (error, $error_color) {
-      &.#{$e_type} {
-        color: $selected_fg_color;
-        border-color: if($darker=='false' and $variant=='light', $e_color, $header_entry_border);
-        background-image: linear-gradient(to bottom, mix($e_color, $header_bg, 60%));
-
-        &:focus {
-          color: $selected_fg_color;
-          background-image: linear-gradient(to bottom, $e_color);
-        }
-        selection, selection:focus {
-          background-color: $selected_fg_color;
-=======
     @each $e_type, $e_color, $e_fg_color in (warning, $warning_color, $warning_fg_color),
                                             (error, $error_color, $error_fg_color) {
       &.#{$e_type} {
@@ -1330,7 +1169,6 @@ headerbar {
         }
         selection, selection:focus {
           background-color: $e_fg_color;
->>>>>>> vendor
           color: $e_color;
         }
       }
@@ -1357,13 +1195,8 @@ headerbar {
 
     &, &.flat {
       @include button(undecorated);
-<<<<<<< HEAD
-      color: $selected_fg_color;
-      background-color: transparentize($selected_fg_color, 1);
-=======
       color: $selection_mode_fg;
       background-color: transparentize($selection_mode_fg, 1);
->>>>>>> vendor
     }
     &:hover { @extend %normal_selected_button; }
     &:active, &:checked { @extend %selected-button:active; }
@@ -1389,11 +1222,6 @@ headerbar {
       border-style: solid;
     }
   }
-<<<<<<< HEAD
-  .linked:not(.vertical):not(.path-bar), .linked:not(.vertical).path-bar {
-    > button:hover:not(:checked):not(:active):not(:only-child),
-    > button:hover:not(:checked):not(:active) + button:not(:checked):not(:active) { box-shadow: none; }
-=======
   .linked:not(.vertical):not(.path-bar) {
     $_uncolored_button: 'button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action)';
 
@@ -1401,7 +1229,6 @@ headerbar {
     > #{$_uncolored_button}:hover + #{$_uncolored_button},
     > #{$_uncolored_button}:disabled:not(:only-child),
     > #{$_uncolored_button}:disabled + #{$_uncolored_button}:not(:hover) { box-shadow: none; }
->>>>>>> vendor
   }
 
   // special case for path-bars and stack-switchers
@@ -1417,15 +1244,9 @@ headerbar {
 
       &, &:hover, &:active, &:checked, &:disabled { @extend %linked; }
     }
-<<<<<<< HEAD
-
-    @include pathbar_linking_rules($sep_color:$header_button_border);
-  }
-=======
     @include pathbar_linking_rules($sep_color:$header_button_border);
   }
 
->>>>>>> vendor
   // use linking rules for entries only
   .linked:not(.vertical):not(.path-bar) {
     @include linking_rules( $a:0.5,
@@ -1436,37 +1257,20 @@ headerbar {
   }
 
   // Headerbar Suggested and Destructive Action buttons
-<<<<<<< HEAD
-  @each $b_type, $b_color in (suggested-action, $suggested_color),
-                             (destructive-action, $destructive_color) {
-    button.#{$b_type} {
-      @include button(suggested_destructive, $b_color);
-=======
   @each $b_type, $b_color, $b_fg in (suggested-action, $suggested_color, $suggested_fg_color),
                                     (destructive-action, $destructive_color, $destructive_fg_color) {
     button.#{$b_type} {
       @include button(suggested_destructive, $b_color, $b_fg);
->>>>>>> vendor
 
       &.flat {
         @include button(undecorated);
         color: $b_color;
-<<<<<<< HEAD
-        outline-color: transparentize($b_color, 0.7);
-      }
-      &:hover {
-        @include button(suggested_destructive, lighten($b_color, 10%));
-      }
-      &:active, &:checked {
-        @include button(suggested_destructive, darken($b_color, 10%));
-=======
       }
       &:hover {
         @include button(suggested_destructive, lighten($b_color, 10%), $b_fg);
       }
       &:active, &:checked {
         @include button(suggested_destructive, darken($b_color, 10%), $b_fg);
->>>>>>> vendor
       }
       &.flat:disabled,
       &:disabled { @include button(header-insensitive); }
@@ -1496,12 +1300,9 @@ headerbar {
     > button:hover:not(:active),
     > button:hover + button { box-shadow: inset 1px 0 $header_button_border; }
 
-<<<<<<< HEAD
-=======
     > button:disabled + button:not(:disabled):not(:active):not(:checked):not(:hover),
     > button:not(:disabled):not(:active):not(:checked):not(:hover) + button:disabled { box-shadow: inset 1px 0 $header_button_border; }
 
->>>>>>> vendor
     > button:first-child:hover:not(:active),
     > entry + button:not(:active):hover { box-shadow: none; }
 
@@ -1626,13 +1427,6 @@ headerbar {
 // Tree Views
 //
 treeview.view {
-<<<<<<< HEAD
-  -GtkTreeView-grid-line-width: 1;
-  -GtkTreeView-grid-line-pattern: '';
-  -GtkTreeView-tree-line-width: 1;
-  -GtkTreeView-tree-line-pattern: '';
-  -GtkTreeView-expander-size: 16;
-=======
   @at-root * {
     -GtkTreeView-horizontal-separator: 4;
     -GtkTreeView-grid-line-width: 1;
@@ -1641,7 +1435,6 @@ treeview.view {
     -GtkTreeView-tree-line-pattern: '';
     -GtkTreeView-expander-size: 16;
   }
->>>>>>> vendor
 
   border-left-color: transparentize($fg_color, 0.85);   // this is actually the tree lines color,
   border-top-color: transparentize(black, 0.9);         // while this is the grid lines color, better then nothing
@@ -1702,25 +1495,11 @@ treeview.view {
   &.progressbar, &.progressbar:focus { // progress bar in treeviews
     color: $selected_fg_color;
     border-radius: 3px;
-<<<<<<< HEAD
-    background-image: linear-gradient(to bottom, $selected_bg_color);
-=======
     background-color: $selected_bg_color;
->>>>>>> vendor
 
     &:selected, &:selected:focus {
       color: $selected_bg_color;
       box-shadow: none;
-<<<<<<< HEAD
-      background-image: linear-gradient(to bottom, $selected_fg_color);
-    }
-  }
-  &.trough, &.trough:selected, &.trough:selected:focus { // progress bar trough in treeviews
-    color: $fg_color;
-    background-image: linear-gradient(to bottom, $button_border);
-    border-radius: 3px;
-    border-width: 0;
-=======
       background-color: $selected_fg_color;
     }
   }
@@ -1736,7 +1515,6 @@ treeview.view {
       border-radius: 3px;
       border-width: 0;
     }
->>>>>>> vendor
   }
 
   header {
@@ -1805,11 +1583,7 @@ menubar,
   }
 
   > menuitem {
-<<<<<<< HEAD
-    padding: 6px 8px;
-=======
     padding: 4px 8px;
->>>>>>> vendor
     border: solid transparent;
     border-width: 0;
 
@@ -1845,19 +1619,6 @@ menu,
     background-color: $_menu_bg;
   }
 
-<<<<<<< HEAD
-  menuitem {
-    min-height: 16px;
-    min-width: 40px;
-    padding: 4px;
-    border: solid transparent;
-    border-width: 1px 0 1px 0;
-    &:hover {
-      color: $fg_color;
-      background-color: if($variant == 'light', transparentize(black, 0.96), transparentize(white, 0.95));
-      border: solid if($variant == 'light', transparentize(black, 0.92), transparentize(white, 0.93));
-      border-width: 1px 0 1px 0;
-=======
   // Firefox workaround
   .separator:not(label),
   .csd & .separator:not(label) { color: $_menu_bg; }
@@ -1870,7 +1631,6 @@ menu,
     &:hover {
       color: $selected_fg_color;
       background-color: $selected_bg_color;
->>>>>>> vendor
     }
     &:disabled {
       color: $insensitive_fg_color;
@@ -1982,16 +1742,12 @@ notebook {
     border: 1px solid $borders_color;
 
     > header {
-<<<<<<< HEAD
-      margin: -1px;  // ugly hack to hide the borders around the header
-=======
       // ugly hack to hide the borders around the header
       margin: -1px;
       &.top { margin-bottom: 0; }
       &.bottom { margin-top: 0; }
       &.left { margin-right: 0; }
       &.right { margin-left: 0; }
->>>>>>> vendor
 
       &.top, &.bottom { padding-left: 0; padding-right: 0; }
       &.left, &.right { padding-top: 0; padding-bottom: 0; }
@@ -2116,21 +1872,14 @@ notebook {
 $_scrollbar_bg_color: darken($base_color, 1%);
 
 scrollbar {
-<<<<<<< HEAD
-=======
   $_slider_min_length: 40px;
 
   // disable steppers
->>>>>>> vendor
   @at-root * {
     -GtkScrollbar-has-backward-stepper: false;
     -GtkScrollbar-has-forward-stepper: false;
   }
 
-<<<<<<< HEAD
-  $_slider_margin: 3px;
-  $_slider_fine_tune_margin: 4px;
-=======
   background-color: $_scrollbar_bg_color;
   transition: 300ms $ease-out-quad;
 
@@ -2139,7 +1888,6 @@ scrollbar {
   &.bottom { border-top: 1px solid $borders_color; }
   &.left { border-right: 1px solid $borders_color; }
   &.right { border-left: 1px solid $borders_color; }
->>>>>>> vendor
 
   button { border: none; }
 
@@ -2153,49 +1901,6 @@ scrollbar {
     &.up { -gtk-icon-source: -gtk-icontheme('pan-left-symbolic'); }
   }
 
-<<<<<<< HEAD
-  &.overlay-indicator {
-    &:not(.dragging):not(.hovering) { // Overlay scrolling indicator
-      opacity: 0.4;
-
-      slider {
-        margin: 0;
-        background-color: mix($fg_color, $bg_color, 70%);
-        border: 1px solid if($variant == 'light', transparentize(white, 0.4), transparentize(black, 0.7));
-        background-clip: padding-box;
-      }
-
-      trough {
-        border-style: none;
-        background-color: transparent;
-      }
-
-      &.vertical slider {
-        min-width: 4px;
-        margin-top: $_slider_margin - 1px;
-        margin-bottom: $_slider_margin - 1px;
-      }
-
-      &.horizontal slider {
-        min-height: 4px;
-        margin-left: $_slider_margin - 1px;
-        margin-right: $_slider_margin - 1px;
-      }
-    }
-
-    &.dragging,
-    &.hovering { opacity: 0.99; }
-  }
-
-  // trough coloring
-  trough {
-    background-color: $_scrollbar_bg_color;
-    border: 1px none $borders_color;
-  }
-
-  // slider coloring
-  slider {
-=======
   // slider
   slider {
     min-width: 6px;
@@ -2204,60 +1909,12 @@ scrollbar {
     border: 4px solid transparent;
     border-radius: 8px;
     background-clip: padding-box;
->>>>>>> vendor
     background-color: mix($fg_color, $bg_color, 40%);
 
     &:hover { background-color: mix($fg_color, $bg_color, 30%); }
 
     &:hover:active { background-color: $selected_bg_color;}
 
-<<<<<<< HEAD
-    &:disabled {
-      background-color: transparent;
-    }
-  }
-
-  // sizing
-  slider {
-    border-radius: 100px;
-    margin: $_slider_margin;
-  }
-
-  &.vertical {
-
-    &.fine-tune slider {
-      min-width: 4px;
-      margin: $_slider_fine_tune_margin;
-    }
-
-    slider {
-      min-height: 42px;
-      min-width: 6px;
-      margin: $_slider_margin;
-    }
-
-    trough {
-      &:dir(ltr) { border-left-style: solid; }
-      &:dir(rtl) { border-right-style: solid; }
-    }
-  }
-
-  &.horizontal {
-
-    &.fine-tune slider {
-      min-height: 4px;
-      margin: $_slider_fine_tune_margin;
-    }
-
-    slider {
-      min-height: 6px;
-      min-width: 42px;
-      margin-top: $_slider_margin;
-    }
-
-    trough { border-top-style: solid; }
-  }
-=======
     &:disabled { background-color: transparent; }
   }
 
@@ -2302,18 +1959,13 @@ scrollbar {
 
   &.horizontal slider { min-width: $_slider_min_length; }
   &.vertical slider { min-height: $_slider_min_length; }
->>>>>>> vendor
 }
 
 //
 // Switches
 //
 switch {
-<<<<<<< HEAD
-  font: 1;
-=======
   font-size: 1px;
->>>>>>> vendor
 
   min-width: 52px;
   min-height: 24px;
@@ -2346,10 +1998,7 @@ switch {
     background-image: -gtk-scaled(url("assets/switch#{$l}#{$asset_suffix}.png"),url("assets/switch#{$l}#{$asset_suffix}@2.png"));
   }
 
-<<<<<<< HEAD
-=======
   menuitem:hover switch#{$k},
->>>>>>> vendor
   row:selected switch#{$k},
   infobar switch#{$k} {
     background-image: -gtk-scaled(url("assets/switch#{$l}-selected.png"),url("assets/switch#{$l}-selected@2.png"));
@@ -2374,10 +2023,7 @@ switch {
                   (':indeterminate:disabled', '-mixed-insensitive'),
                   (':checked', '-checked'),
                   (':checked:disabled','-checked-insensitive') {
-<<<<<<< HEAD
-=======
     .#{$w}#{$s},
->>>>>>> vendor
     #{$w}#{$s},
     treeview.#{$w}#{$s} {
       -gtk-icon-source: -gtk-scaled(url("assets/#{$a}#{$as}#{$asset_suffix}.png"),
@@ -2394,10 +2040,7 @@ switch {
     // the borders of checks and radios are
     // too similar in luminosity to the selected background color, hence
     // we need special casing.
-<<<<<<< HEAD
-=======
     menuitem #{$w}#{$s}:hover,
->>>>>>> vendor
     .view #{$w}#{$s}:selected,
     treeview.#{$w}#{$s}:selected,
     row:selected #{$w}#{$s},
@@ -2508,10 +2151,7 @@ scale {
     }
 
     // Troughs in selected list-rows and infobars
-<<<<<<< HEAD
-=======
     menuitem:hover &,
->>>>>>> vendor
     row:selected &,
     infobar & {
       background-color: transparentize(black, 0.8);
@@ -2567,10 +2207,7 @@ scale {
     }
 
     // Selected list-row and infobar sliders
-<<<<<<< HEAD
-=======
     menuitem:hover &,
->>>>>>> vendor
     row:selected &,
     infobar & {
       background-clip: border-box;
@@ -2765,17 +2402,12 @@ frame > border,
   padding: 0;
   border-radius: 0;
   border: 1px solid $borders_color;
-<<<<<<< HEAD
-
-  &.flat { border-style: none; }
-=======
 }
 
 frame.flat > border,
 frame > border.flat,
 .frame.flat {
   border-style: none;
->>>>>>> vendor
 }
 
 scrolledwindow {
@@ -2909,30 +2541,6 @@ calendar {
   padding: 2px;
 
   &:selected {
-<<<<<<< HEAD
-    background-color: $selected_bg_color;
-    color: $selected_fg_color;
-    border-radius: 1.5px;
-  }
-  &.header {
-    color: $fg_color;
-    border: none;
-    border-radius: 0;
-  }
-  &.button, &.button:focus {
-    color: transparentize($fg_color,0.55);
-    @include button(undecorated);
-
-    &:hover {
-      color: $fg_color;
-    }
-    &:disabled {
-      color: $insensitive_fg_color;
-      background-color: transparent;
-      background-image: none;
-    }
-  }
-=======
     @extend %selected_items;
     border-radius: 1.5px;
   }
@@ -2952,7 +2560,6 @@ calendar {
     &:disabled { color: $insensitive_fg_color; }
   }
 
->>>>>>> vendor
   &:indeterminate { color: gtkalpha(currentColor,0.55); }
   &.highlight { color: $fg_color; }
 }
@@ -3103,11 +2710,7 @@ placessidebar {
     &.sidebar-placeholder-row {
       padding: 0 8px;
       min-height: 2px;
-<<<<<<< HEAD
-      background-image: linear-gradient(to top, $drop_target_color);
-=======
       background-image: _solid($drop_target_color);
->>>>>>> vendor
       background-clip: content-box;
     }
 
@@ -3157,27 +2760,16 @@ paned {
     -gtk-icon-source: none;
     border-style: none;
     background-color: transparent;
-<<<<<<< HEAD
-    background-image: linear-gradient(to top, $borders_color);
-    background-size: 1px 1px;
-
-    &:selected { background-image: linear-gradient(to top, $selected_bg_color); }
-=======
     background-image: _solid($borders_color);
     background-size: 1px 1px;
 
     &:selected { background-image: _solid($selected_bg_color); }
->>>>>>> vendor
 
     &.wide {
       min-width: 5px;
       min-height: 5px;
       background-color: $bg_color;
-<<<<<<< HEAD
-      background-image: linear-gradient(to top, $borders_color), linear-gradient(to top, $borders_color);
-=======
       background-image: _solid($borders_color), _solid($borders_color);
->>>>>>> vendor
       background-size: 1px 1px, 1px 1px;
     }
   }
@@ -3221,30 +2813,6 @@ paned {
 //
 // GtkInfoBar
 //
-<<<<<<< HEAD
-infobar { border-style: none; }
-
-.info,
-.question,
-.warning,
-.error {
-  background-color: $selected_bg_color;
-  color: $selected_fg_color;
-
-  button { @extend %selected-button }
-
-  label:selected {
-    &:focus, &:hover, & {
-      color: $selected_bg_color;
-      background-color: $selected_fg_color;
-    }
-  }
-
-  *:link { @extend %link_selected; }
-}
-
-
-=======
 infobar {
   border-style: none;
 
@@ -3267,7 +2835,6 @@ infobar {
   }
 }
 
->>>>>>> vendor
 //
 // Buttons on selected backgrounds
 //
@@ -3275,10 +2842,6 @@ infobar {
 
   @at-root %normal_selected_button, & {
     color: $selected_fg_color;
-<<<<<<< HEAD
-    outline-color: transparentize($selected_fg_color, 0.7);
-=======
->>>>>>> vendor
     background-color: transparentize($selected_fg_color, 1);
     border-color: transparentize($selected_fg_color, 0.5);
   }
@@ -3294,19 +2857,11 @@ infobar {
   }
   &:hover {
     color: $selected_fg_color;
-<<<<<<< HEAD
-    outline-color: transparentize($selected_fg_color, 0.7);
-=======
->>>>>>> vendor
     background-color: transparentize($selected_fg_color, 0.8);
     border-color: transparentize($selected_fg_color, 0.2);
   }
   &:active, &:active:hover, &:checked {
     color: $selected_bg_color;
-<<<<<<< HEAD
-    outline-color: transparentize($selected_bg_color, 0.7);
-=======
->>>>>>> vendor
     background-color: $selected_fg_color;
     border-color: $selected_fg_color;
   }
@@ -3330,11 +2885,7 @@ tooltip {
   &.background {
     // background-color needs to be set this way otherwise it gets drawn twice
     // see https://bugzilla.gnome.org/show_bug.cgi?id=736155 for details.
-<<<<<<< HEAD
-    background-color: $osd_bg_color;
-=======
     background-color: lighten($osd_bg_color, 10%);
->>>>>>> vendor
     background-clip: padding-box;
 
     label { padding: 4px; }
@@ -3472,11 +3023,7 @@ colorchooser .popover.osd { border-radius: 3px; }
 
 // Decouple the font of context menus from their entry/textview
 .context-menu { font: initial; }
-<<<<<<< HEAD
-.monospace { font: Monospace; }
-=======
 .monospace { font-family: Monospace; }
->>>>>>> vendor
 
 //
 // Shortcuts Help
@@ -3484,14 +3031,9 @@ colorchooser .popover.osd { border-radius: 3px; }
 button.circular,
 button.circular-button {
   padding: 0;
-<<<<<<< HEAD
-  min-width: 26px;
-  min-height: 26px;
-=======
   min-width: 16px;
   min-height: 24px;
   padding: 2px 6px;
->>>>>>> vendor
   border-radius: 50%;
   -gtk-outline-radius: 50%;
 
@@ -3571,11 +3113,7 @@ decoration {
   }
   tooltip.csd & {
     border-radius: 2px;
-<<<<<<< HEAD
-    box-shadow: 0 1px 3px 1px $_wm_border;
-=======
     box-shadow: 0 1px 3px 1px if($variant == 'light', $_wm_border, transparentize($_wm_border, 0.3));
->>>>>>> vendor
   }
   messagedialog.csd & {
     border-radius: 3px;
@@ -3640,10 +3178,6 @@ headerbar,
 
   @at-root %nobg_selected_items, & {
     color: $selected_fg_color;
-<<<<<<< HEAD
-    outline-color: transparentize($selected_fg_color, 0.7);
-=======
->>>>>>> vendor
 
     &:disabled { color: mix($selected_fg_color, $selected_bg_color, 50%); }
   }

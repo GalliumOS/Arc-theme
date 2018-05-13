@@ -2,19 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-<<<<<<< HEAD
-=======
    xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
->>>>>>> vendor
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-<<<<<<< HEAD
-=======
    xmlns:xlink="http://www.w3.org/1999/xlink"
->>>>>>> vendor
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="35"
@@ -24,9 +18,6 @@
    inkscape:version="0.91 r13725"
    sodipodi:docname="add-workspace-active.svg">
   <defs
-<<<<<<< HEAD
-     id="defs4" />
-=======
      id="defs4">
     <linearGradient
        id="selected_fg_color"
@@ -63,7 +54,6 @@
        y2="960.36218"
        gradientUnits="userSpaceOnUse" />
   </defs>
->>>>>>> vendor
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -72,13 +62,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="8"
-<<<<<<< HEAD
-     inkscape:cx="-12.039549"
-     inkscape:cy="88.924726"
-=======
      inkscape:cx="1.6114609"
      inkscape:cy="95.511861"
->>>>>>> vendor
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -117,11 +102,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-<<<<<<< HEAD
-        <dc:title></dc:title>
-=======
         <dc:title />
->>>>>>> vendor
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -131,11 +112,7 @@
      id="layer1"
      transform="translate(0,-852.36218)">
     <path
-<<<<<<< HEAD
-       style="opacity:1;fill:#5294e2;fill-opacity:1;stroke:#102b68;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-=======
        style="opacity:1;fill:url(#selected_bg_color);fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
->>>>>>> vendor
        d="M 3 0 C 1.3380015 0 0 1.3380015 0 3 L 0 197 C 0 198.662 1.3380015 200 3 200 L 36 200 C 37.661999 200 39 198.662 39 197 L 39 3 C 39 1.3380015 37.661999 0 36 0 L 3 0 z M 3 1 L 36 1 C 37.108 1 38 1.892 38 3 L 38 197 C 38 198.108 37.108 199 36 199 L 3 199 C 1.892 199 1 198.108 1 197 L 1 3 C 1 1.892 1.892 1 3 1 z "
        transform="translate(0,852.36218)"
        id="rect3810" />
@@ -145,11 +122,7 @@
        style="fill:#000000;fill-opacity:1;opacity:0.5" />
     <rect
        rx="2"
-<<<<<<< HEAD
-       style="opacity:1;fill:#5294e2;fill-opacity:1;stroke:#102b68;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-=======
        style="opacity:1;fill:url(#linearGradient4146);fill-opacity:1;stroke:#102b68;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
->>>>>>> vendor
        id="rect3812"
        width="37"
        height="198"
@@ -158,11 +131,7 @@
        ry="2" />
     <g
        id="g3917"
-<<<<<<< HEAD
-       style="fill:#ffffff;fill-opacity:1">
-=======
        style="fill:url(#linearGradient4149);fill-opacity:1">
->>>>>>> vendor
       <rect
          ry="1.1428567"
          y="944.36218"
@@ -170,11 +139,7 @@
          height="15.999994"
          width="2.0000002"
          id="rect3897"
-<<<<<<< HEAD
-         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#102b68;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
-=======
          style="opacity:1;fill:url(#linearGradient4149);fill-opacity:1;stroke:#102b68;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
->>>>>>> vendor
       <rect
          transform="matrix(0,1,-1,0,0,0)"
          ry="1.1428567"
@@ -183,11 +148,7 @@
          height="15.999994"
          width="2.0000002"
          id="rect3897-6"
-<<<<<<< HEAD
-         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#102b68;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
-=======
          style="opacity:1;fill:url(#linearGradient4149);fill-opacity:1;stroke:#102b68;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
->>>>>>> vendor
     </g>
   </g>
 </svg>

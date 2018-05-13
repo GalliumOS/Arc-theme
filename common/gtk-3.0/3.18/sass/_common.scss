@@ -531,44 +531,6 @@ $_dot_color: $selected_bg_color;
                      $e_border:$entry_border, $b_border:$button_border) {
 
   $_border: if($vert=='false', left, top);
-<<<<<<< HEAD
-
-  @if $entry_rules=='true' {
-    > .entry + .entry { border-#{$_border}-color: transparentize($e_border, $a); }
-
-    > .entry.error + .entry,
-    > .entry + .entry.error { border-#{$_border}-color: if($var=='light', $error_color, transparentize($e_border, $a)); }
-
-    > .entry.warning + .entry,
-    > .entry + .entry.warning { border-#{$_border}-color: if($var=='light', $warning_color, transparentize($e_border, $a)); }
-
-    > .entry.error + .entry.warning { border-#{$_border}-color: if($var=='light', $error_color, transparentize($e_border, $a));}
-
-    @each $e_type, $e_color in ('',$selected_bg_color),
-                               ('.warning', $warning_color),
-                               ('.error', $error_color) {
-
-      > .entry + .entry#{$e_type}:focus:not(:last-child),
-      > .entry + .entry#{$e_type}:focus:last-child { border-#{$_border}-color: if($var=='light', $e_color, $e_border); }
-
-      > .entry#{$e_type}:focus:not(:only-child) {
-        + .entry, + .button,
-        + GtkComboBox > .the-button-in-the-combobox,
-        + GtkComboBoxText > .the-button-in-the-combobox { border-#{$_border}-color: if($var=='light', $e_color, $e_border); }
-      }
-    }
-    > .button:checked + .entry { border-#{$_border}-color: if($var=='light', $selected_bg_color, $e_border); }
-  }
-  @if $button_rules=='true' {
-    > .button + .button { border-#{$_border}-style: none; }
-
-    > .button:hover:not(:checked):not(:active):not(:only-child),
-    > .button:hover:not(:checked):not(:active) + .button:not(:checked):not(:active) { box-shadow: inset if($vert=='false', 1px 0, 0 1px) $b_border; }
-
-    > .button:first-child:hover:not(:checked):not(:active),
-    > .button:checked + .button:not(:checked):not(:active):hover,
-    > .entry + .button:not(:checked):not(:active):hover { box-shadow: none; }
-=======
 
   @if $entry_rules=='true' {
     > .entry + .entry { border-#{$_border}-color: transparentize($e_border, $a); }
@@ -612,7 +574,6 @@ $_dot_color: $selected_bg_color;
     > .button.suggested-action + #{$_uncolored_button}:hover,
     > .button.destructive-action + #{$_uncolored_button}:hover,
     > .entry + #{$_uncolored_button}:hover:not(:only-child) { box-shadow: none; }
->>>>>>> vendor
   }
 }
 
@@ -1207,34 +1168,6 @@ GtkComboBox {
   // Linking stuff
 
   // Reset buttons
-<<<<<<< HEAD
-  .linked:not(.vertical):not(.path-bar) > .button,
-  .linked:not(.vertical):not(.path-bar) > .button:hover,
-  .linked:not(.vertical):not(.path-bar) > .button:active,
-  .linked:not(.vertical):not(.path-bar) > .button:checked,
-  .linked:not(.vertical):not(.path-bar) > .button:insensitive {
-    border-radius: 3px;
-    border-style: solid;
-  }
-  .linked:not(.vertical):not(.path-bar), .linked:not(.vertical).path-bar {
-    > .button:hover:not(:checked):not(:active):not(:only-child),
-    > .button:hover:not(:checked):not(:active) + .button:not(:checked):not(:active) { box-shadow: none; }
-  }
-
-  // special case for path-bars and stack-switchers
-  .linked:not(.vertical):not(.path-bar).stack-switcher,
-  .linked:not(.vertical).path-bar {
-
-    > .button {
-      @include button(header-hover);
-
-      &:hover { background-color: lighten($header_button_bg, 15%); }
-      &:active, &:checked { @include button(header-active); }
-      &:insensitive { color: transparentize($header_fg, 0.4); }
-
-      &, &:hover, &:active, &:checked, &:insensitive { @extend %linked; }
-    }
-=======
   .linked:not(.vertical):not(.path-bar) > .button {
     &, &:hover, &:active, &:checked, &:insensitive {
       border-radius: 3px;
@@ -1261,7 +1194,6 @@ GtkComboBox {
 
       &, &:hover, &:active, &:checked, &:insensitive { @extend %linked; }
     }
->>>>>>> vendor
 
     @include pathbar_linking_rules($sep_color:$header_button_border);
   }
@@ -1275,13 +1207,8 @@ GtkComboBox {
   }
 
   // Headerbar Suggested and Destructive Action buttons
-<<<<<<< HEAD
-  @each $b_type, $b_color in (suggested-action, $suggested_color),
-                             (destructive-action, $destructive_color) {
-=======
   @each $b_type, $b_color, $b_fg in (suggested-action, $suggested_color, $suggested_fg_color),
                                     (destructive-action, $destructive_color, $destructive_fg_color) {
->>>>>>> vendor
     .button.#{$b_type} {
       @include button(suggested_destructive, $b_color, $b_fg);
 

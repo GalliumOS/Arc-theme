@@ -17,36 +17,19 @@ UnityDecoration {
   -UnityDecoration-title-fade: 35px;
   -UnityDecoration-title-alignment: 0.0;
 
-<<<<<<< HEAD
-  &.top {
-=======
   .top {
->>>>>>> vendor
     border: 1px solid if($darker=='true' or $variant == 'dark', darken($header_bg, 7%), transparentize(black, 0.9));
     border-bottom-width: 0;
     border-radius: 4px 4px 0 0;
     padding: 1px 6px 0 6px;
 
-<<<<<<< HEAD
-    background-image: linear-gradient(to bottom, opacify($header_bg, 1));
-=======
     background-image: _solid(opacify($header_bg, 1));
->>>>>>> vendor
     color: $header_fg;                         // The foreground color will be used to paint the text
 
     box-shadow: inset 0  1px lighten($header_bg, 3%);
 
     &:backdrop {
       border-bottom-width: 0;
-<<<<<<< HEAD
-      //background-image: linear-gradient(to bottom, opacify($header_bg_backdrop, 1));
-      color: transparentize($header_fg, 0.3);
-    }
-  }
-  &.left, &.right, &.bottom,
-  &.left:backdrop, &.right:backdrop, &.bottom:backdrop {
-    background-image: linear-gradient(to bottom, if($darker=='true' or $variant == 'dark', darken($header_bg, 7%), transparentize(black, 0.9)));
-=======
       //background-image: _solid(opacify($header_bg_backdrop, 1));
       color: transparentize($header_fg, 0.3);
     }
@@ -55,18 +38,13 @@ UnityDecoration {
   .left:backdrop, .right:backdrop, .bottom:backdrop {
     background-color: transparent;
     background-image: _solid(if($darker=='true' or $variant == 'dark', darken($header_bg, 7%), transparentize(black, 0.9)));
->>>>>>> vendor
   }
 }
 
 // Panel Style
 UnityPanelWidget,
 .unity-panel {
-<<<<<<< HEAD
-  background-image: linear-gradient(to bottom, opacify($panel_bg, 1));
-=======
   background-image: _solid(#2f343f);
->>>>>>> vendor
   color: lighten($panel_fg, 20%);
   box-shadow: none;
 
@@ -77,11 +55,6 @@ UnityPanelWidget,
 .unity-panel.menubar .menuitem *:hover {
   border-radius: 0;
   color: $selected_fg_color;
-<<<<<<< HEAD
-  background-image: linear-gradient(to bottom, $selected_bg_color);
-  border-bottom: none;
-}
-=======
   background-image: _solid($selected_bg_color);
   border-bottom: none;
 }
@@ -184,4 +157,3 @@ UnityPanelWidget,
     -gtk-icon-transform: rotate(1turn);
   }
 }
->>>>>>> vendor
