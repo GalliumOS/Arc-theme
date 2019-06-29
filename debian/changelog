@@ -1,4 +1,4 @@
-arc-theme (20180114-1ubuntu1-galliumos0+dev1) bismuth; urgency=medium
+arc-theme (20180114-1ubuntu1-galliumos1) bismuth; urgency=medium
 
   * Prepare for GalliumOS 3.0
   * Re-add visible button highlights
